@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tierra en Venta</title>
+<meta name="description" content="Observatorio y chequeo bilingüe sobre la venta de tierras rurales a extranjeros en Argentina, el RIGI y el Súper RIGI: textos de ley, mapa por departamento, votaciones y qué se puede hacer.">
+<meta property="og:title" content="Tierra en Venta · ¿Están vendiendo el país?">
+<meta property="og:description" content="Observatorio y chequeo bilingüe sobre la venta de tierras rurales a extranjeros en Argentina, el RIGI y el Súper RIGI: textos de ley, mapa por departamento, votaciones y qué se puede hacer.">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="dark light">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,600;125,800;125,900&family=Piazzolla:ital,opsz,wght@0,8..30,400;0,8..30,600;1,8..30,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: a deck of ten screens. Fixed rail on top (progress, index, language, ticker or the mini timeline), fixed bar below (prev, position, next).
+   Inside a screen, content flows down and reveals as you scroll. Dark-first situation room; one alarm colour; monospace for anything that is a record. */
+:root{
+  --bg:#0d1114; --surface:#141a1e; --surface-2:#1b2328; --fg:#f2f4ef; --fg-2:#aab3ab; --fg-3:#6f7a73; --line:#273138;
+  --alarm:#ff5a1f; --alarm-soft:#3a1a0e; --accent:#5598e7; --accent-soft:#163058;
+  --ok:#2ec98f; --ok-soft:#0f3a2a; --hold:#e9b949; --hold-soft:#3d2f0c; --off:#7f8a84; --off-soft:#263029;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
+  --q1:#1d3350; --q2:#1c4f86; --q3:#2a78d6; --q4:#5598e7; --q5:#9ec5f4;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif; --body:"Piazzolla",Georgia,"Times New Roman",serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace; --ui:"Archivo",Arial,sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){
+  --bg:#f3f4f0; --surface:#ffffff; --surface-2:#e9ece6; --fg:#0f1416; --fg-2:#4f5a55; --fg-3:#7d877f; --line:#d3d9d2;
+  --alarm:#e4400f; --alarm-soft:#fde4da; --accent:#1c5cab; --accent-soft:#d7e6fb;
+  --ok:#0f8f62; --ok-soft:#d5f2e5; --hold:#a86f00; --hold-soft:#fff0c7; --off:#7f8a84; --off-soft:#e3e7e2;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#128a62; --s4:#b07800; --s5:#c7497a;
+  --q1:#cde2fb; --q2:#9ec5f4; --q3:#5598e7; --q4:#2a78d6; --q5:#184f95; color-scheme:light } }
+:root[data-theme="light"]{
+  --bg:#f3f4f0; --surface:#ffffff; --surface-2:#e9ece6; --fg:#0f1416; --fg-2:#4f5a55; --fg-3:#7d877f; --line:#d3d9d2;
+  --alarm:#e4400f; --alarm-soft:#fde4da; --accent:#1c5cab; --accent-soft:#d7e6fb;
+  --ok:#0f8f62; --ok-soft:#d5f2e5; --hold:#a86f00; --hold-soft:#fff0c7; --off:#7f8a84; --off-soft:#e3e7e2;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#128a62; --s4:#b07800; --s5:#c7497a;
+  --q1:#cde2fb; --q2:#9ec5f4; --q3:#5598e7; --q4:#2a78d6; --q5:#184f95; color-scheme:light }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;margin:0;padding-inline:16px;padding-block:0}
+.site{max-width:78ch;margin:0 auto;padding-top:calc(76px + env(safe-area-inset-top,0px));padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+.site[data-lang="es"] .en{display:none}
+.site[data-lang="en"] .es{display:none}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.02;margin:0}
+h1{font-size:clamp(2.4rem,8.5vw,5rem);font-weight:900;font-stretch:125%;letter-spacing:-.015em;text-transform:uppercase}
+h2{font-size:clamp(1.9rem,6vw,3rem);font-weight:900;font-stretch:125%;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:.5em}
+h3{font-size:1.05rem;font-weight:600;font-stretch:100%}
+h3.cap{font-size:1.25rem;font-weight:800;font-stretch:125%;text-transform:uppercase;margin:34px 0 12px}
+p{margin:0 0 1em}
+a{color:var(--accent)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);margin-bottom:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.eyebrow .ix{color:var(--fg-2);font-weight:600}
+.muted{color:var(--fg-2)} .small{font-size:.9rem} .num{font-variant-numeric:tabular-nums}
+.panel{display:none}
+.panel.cur{display:block;min-height:calc(100vh - 160px);min-height:calc(100svh - 160px);padding-block:20px 40px}
+@media (prefers-reduced-motion:no-preference){.panel.cur{animation:in .28s ease-out}}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){
+  .js .rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+  .js .rv.in{opacity:1;transform:none}
+}
+.rail{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.rail .prog{height:3px;background:var(--line)}
+.rail .prog i{display:block;height:100%;background:var(--fg);width:0;transition:width .3s}
+.rail .in{max-width:78ch;margin:0 auto;padding:8px 16px;display:flex;gap:10px;align-items:center}
+.brand{font-family:var(--display);font-weight:900;font-stretch:125%;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;margin-right:auto;white-space:nowrap}
+.brand i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok);margin-right:8px;vertical-align:1px;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.brand i{animation:none}}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:.74rem}
+.lang button{background:transparent;border:0;color:var(--fg-2);padding:5px 11px;cursor:pointer;font:inherit}
+.lang button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.lang button:focus-visible,.ixbtn:focus-visible{outline:2px solid var(--fg);outline-offset:-2px}
+.ixbtn{font:inherit;font-family:var(--mono);font-size:.74rem;background:transparent;border:1px solid var(--line);border-radius:999px;color:var(--fg-2);padding:5px 11px;cursor:pointer}
+.ticker{font-family:var(--mono);font-size:.72rem;color:var(--fg-2);border-top:1px solid var(--line);padding:6px 16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:78ch;margin:0 auto}
+.minitl{border-top:1px solid var(--line);padding:8px 16px 6px;max-width:78ch;margin:0 auto}
+.minitl .track{position:relative;height:14px}
+.minitl .track::before{content:"";position:absolute;left:0;right:0;top:6px;height:2px;background:var(--line)}
+.minitl .track i{position:absolute;top:3px;width:8px;height:8px;border-radius:50%;background:var(--fg-3);transform:translateX(-50%)}
+.minitl .track i.done{background:var(--fg-2)}
+.minitl .track i.cur{background:var(--fg);width:12px;height:12px;top:1px;box-shadow:0 0 0 3px var(--surface-2)}
+.minitl .lab{font-family:var(--mono);font-size:.68rem;color:var(--fg-2);display:flex;justify-content:space-between;gap:8px;margin-top:2px}
+.minitl .lab b{color:var(--fg);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.bar{position:fixed;bottom:0;left:0;right:0;z-index:20;background:var(--bg);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bar .in{max-width:78ch;margin:0 auto;padding:10px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center}
+.bar .pos{text-align:center;font-family:var(--mono);font-size:.74rem;color:var(--fg-2);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btn{font:inherit;font-family:var(--ui);font-size:.88rem;font-weight:700;padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;letter-spacing:.02em;text-decoration:none;display:inline-block}
+.btn.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn:disabled{opacity:.3;cursor:default}
+.btn:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.index{position:fixed;inset:0;z-index:30;background:var(--bg);overflow:auto;padding:calc(20px + env(safe-area-inset-top,0px)) 16px 40px}
+.index .in{max-width:78ch;margin:0 auto}
+.index ol{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:6px}
+.index li button{width:100%;text-align:left;font:inherit;font-family:var(--display);font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:1.05rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;color:var(--fg);padding:12px 14px;cursor:pointer;display:flex;gap:14px;align-items:baseline}
+.index li button span.i{font-family:var(--mono);font-size:.74rem;color:var(--fg-2);font-weight:600;min-width:2.2em}
+.index li button.cur{border-color:var(--fg)}
+.stamp{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--fg);color:var(--fg);padding:5px 10px;border-radius:4px;transform:rotate(-2deg);font-weight:600;margin:14px 0 6px}
+.lede{font-size:1.18rem;line-height:1.45;max-width:60ch;margin-top:20px;color:var(--fg-2)}
+.claim{position:relative;font-family:var(--display);font-stretch:100%;font-weight:600;font-size:1.35rem;padding:18px 18px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;margin:26px 0 18px;overflow:hidden}
+.claim::before{content:"";position:absolute;left:0;right:0;top:0;height:7px;background:repeating-linear-gradient(135deg,var(--fg-2) 0 10px,transparent 10px 20px)}
+.verdict{display:grid;grid-template-columns:auto 1fr;gap:12px 16px;align-items:start}
+.verdict .k{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding-top:4px;white-space:nowrap}
+.verdict .k.no{color:var(--s5)} .verdict .k.yes{color:var(--ok)}
+.lead-line{font-size:1.06rem}
+.trust{display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:.72rem;color:var(--fg-3);margin-top:26px;padding-top:14px;border-top:1px solid var(--line)}
+.trust b{color:var(--fg-2);font-weight:600}
+.board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:560px){.board{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--surface);display:flex;flex-direction:column;gap:8px;min-width:0}
+.card .st{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.card h3{font-size:1.15rem;font-weight:800;font-stretch:125%;text-transform:uppercase}
+.state{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-weight:600;letter-spacing:.05em;text-transform:uppercase;font-size:.68rem;padding:4px 8px;border-radius:4px}
+.state::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.st-on{color:var(--ok);background:var(--ok-soft)} .st-off{color:var(--off);background:var(--off-soft)} .st-law{color:var(--accent);background:var(--accent-soft)} .st-hold{color:var(--hold);background:var(--hold-soft)} .st-alarm{color:var(--s5);background:var(--surface-2)}
+.card .sub{font-family:var(--mono);font-size:.72rem;color:var(--fg-3)}
+.checked{font-family:var(--mono);font-size:.68rem;color:var(--fg-3)}
+.b{display:inline-block;font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.06em;padding:2px 6px;border-radius:3px;vertical-align:middle;cursor:help;border:1px solid transparent}
+.bq{background:var(--accent-soft);color:var(--accent)} .br{background:var(--surface-2);color:var(--fg-2);border-color:var(--line)} .bi{background:var(--hold-soft);color:var(--hold)}
+.src{font-family:var(--mono);font-size:.7rem;text-decoration:none;border-bottom:1px dotted var(--accent);margin-left:4px;white-space:nowrap}
+details.fold{border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-top:14px}
+details.fold>summary{list-style:none;cursor:pointer;padding:12px 16px;font-family:var(--ui);font-weight:700;font-size:.9rem;display:flex;justify-content:space-between;align-items:center;gap:10px}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"+";font-weight:400;font-size:1.3rem;color:var(--fg-3);line-height:1;font-family:var(--mono)}
+details.fold[open]>summary::after{content:"–"}
+details.fold>summary:focus-visible{outline:2px solid var(--fg);outline-offset:-2px;border-radius:10px}
+details.fold>.body{padding:0 16px 16px}
+details.fold.quiet{border:0;background:transparent;margin-top:6px}
+details.fold.quiet>summary{padding:6px 0;color:var(--accent);font-weight:600}
+details.fold.quiet>.body{padding:6px 0 0}
+.countdown{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;border:1px solid var(--fg);background:var(--surface);border-radius:12px;padding:16px 18px;margin-bottom:18px}
+.countdown .big{font-family:var(--display);font-weight:900;font-stretch:125%;font-size:3.4rem;line-height:.9;color:var(--fg);font-variant-numeric:tabular-nums}
+.countdown .t{font-size:.98rem}
+.countdown .t b{font-family:var(--ui);font-weight:700}
+.acts{display:grid;gap:10px;margin:14px 0}
+.act{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface)}
+.act .k{font-family:var(--mono);font-size:.7rem;color:var(--fg-2);font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding-top:3px;min-width:5.5em}
+.act b{font-family:var(--ui);font-weight:700}
+.lanes{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--surface);overflow-x:auto}
+.lanes svg{width:100%;min-width:560px;height:auto;display:block}
+.lane-t{font-family:var(--ui);font-size:12px;font-weight:700;fill:var(--fg)}
+.lane-s{font-family:var(--ui);font-size:10.5px;fill:var(--fg-2)}
+.lane-box{fill:var(--surface-2);stroke:var(--line)}
+.lane-out{fill:var(--alarm-soft);stroke:var(--alarm)}
+.arrow{stroke:var(--fg-3);stroke-width:1.4;fill:none;marker-end:url(#ah)}
+.orgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:600px){.orgs{grid-template-columns:1fr}}
+.org{border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:.92rem;min-width:0;background:var(--surface-2)}
+.org b{font-family:var(--ui);font-weight:700;display:block;margin-bottom:3px}
+.org .tag{margin-bottom:6px}
+.guide ol{padding-left:1.2em;margin:4px 0 0}
+.guide li{margin-bottom:8px}
+.vtl{position:relative;padding-left:28px;margin-top:10px}
+.vtl::before{content:"";position:absolute;left:9px;top:0;bottom:0;width:2px;background:var(--line)}
+.ev{position:relative;margin-bottom:18px}
+.ev::before{content:"";position:absolute;left:-24px;top:14px;width:10px;height:10px;border-radius:50%;background:var(--fg-3);border:2px solid var(--bg)}
+.ev.cur::before{background:var(--fg);box-shadow:0 0 0 4px var(--surface-2)}
+.ev .box{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:14px 16px}
+.ev .d{font-family:var(--mono);font-weight:600;color:var(--fg);font-size:.9rem}
+.ev .t{font-family:var(--display);font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:1.05rem;margin:4px 0 6px}
+.tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--fg-2);display:inline-block}
+.tag.land{border-color:var(--alarm);color:var(--alarm)} .tag.rigi{border-color:var(--accent);color:var(--accent)} .tag.super{border-color:var(--hold);color:var(--hold)} .tag.glac{border-color:var(--ok);color:var(--ok)}
+.beat{display:grid;grid-template-columns:56px 1fr;gap:14px;border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--surface);margin-bottom:14px}
+.beat .n{font-family:var(--display);font-weight:900;font-stretch:125%;font-size:2.6rem;color:var(--fg-3);line-height:.9}
+.beat h3{margin-bottom:8px;font-size:1.2rem;font-weight:800;font-stretch:125%;text-transform:uppercase}
+.quote{font-style:italic;color:var(--fg-2);border-left:2px solid var(--fg-3);padding-left:12px;margin:8px 0}
+figure.ch{margin:0 0 30px;min-width:0;display:flex;flex-direction:column;gap:8px;background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:18px 0 0}
+figure.ch svg{width:100%;height:auto;display:block;overflow:visible}
+figcaption{font-family:var(--body);font-size:.92rem;color:var(--fg-2)}
+figcaption b{color:var(--fg);font-weight:800;display:block;font-size:1rem;margin-bottom:3px;text-transform:uppercase;font-stretch:125%}
+figcaption.top b{font-size:1.25rem;line-height:1.1;text-wrap:balance;margin-bottom:6px}
+figcaption.top .howto{display:block;font-family:var(--body);font-size:.95rem;color:var(--fg-2);margin-bottom:8px}
+figcaption .caveat{display:block;color:var(--fg-3);margin-bottom:4px}
+.axis{stroke:var(--line);stroke-width:1}
+.grid{stroke:var(--line);stroke-width:1;stroke-dasharray:2 3}
+.lbl{font-family:var(--mono);font-size:12px;fill:var(--fg-2)}
+.val{font-family:var(--mono);font-size:13px;font-weight:600;fill:var(--fg)}
+.ttl{font-family:var(--ui);font-size:12px;font-weight:700;fill:var(--fg)}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-family:var(--ui);font-size:.8rem;color:var(--fg-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.tip{position:fixed;pointer-events:none;background:var(--fg);color:var(--bg);font-family:var(--mono);font-size:.72rem;padding:6px 8px;border-radius:6px;z-index:40;max-width:280px}
+.vg{display:flex;flex-wrap:wrap;gap:3px}
+.vg i{width:11px;height:11px;border-radius:2px;display:block;background:var(--off)}
+.vg i.A{background:var(--accent)} .vg i.N{background:var(--s5)} .vg i.B{background:var(--hold)} .vg i.U{background:var(--off);opacity:.5}
+.bloc{margin-bottom:10px}
+.bloc .bn{font-family:var(--ui);font-size:.78rem;color:var(--fg-2);margin-bottom:4px;display:flex;justify-content:space-between}
+.map{border:0;border-top:1px solid var(--line);background:transparent;padding:14px 0 0;max-width:520px}
+.map svg{width:100%;height:auto;display:block}
+.map .dep{stroke:var(--surface);stroke-width:.4}
+.map .dep.hi{stroke:var(--alarm);stroke-width:1.2}
+.map .prov{fill:none;stroke:var(--fg-3);stroke-width:1;pointer-events:none}
+.map .dot{stroke:var(--bg);stroke-width:1;opacity:.92}
+.map .dep:hover{stroke:var(--fg);stroke-width:1.2}
+.ramp{display:flex;gap:4px;align-items:center;font-family:var(--ui);font-size:.78rem;color:var(--fg-2);margin-top:8px;flex-wrap:wrap}
+.ramp i{display:inline-block;width:22px;height:10px;margin-left:6px}
+.cf{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface-2);margin-bottom:10px;font-size:.93rem}
+.cf .h{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.cf b{font-family:var(--ui);font-weight:700}
+.cf .co{font-family:var(--ui);font-size:.8rem;color:var(--fg-2);margin:4px 0}
+.cf .co span{color:var(--fg)}
+.essay{font-size:1.08rem;max-width:62ch}
+.essay .byline{font-family:var(--mono);font-size:.74rem;color:var(--fg-3);margin-bottom:18px}
+.draft{display:inline-block;font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--hold-soft);color:var(--hold);font-weight:600;margin-bottom:12px}
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+@media (max-width:640px){.cases{grid-template-columns:1fr}}
+.case{border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:.9rem;min-width:0;background:var(--surface)}
+.case b{font-family:var(--ui);font-weight:700;display:block}
+.talk{border:1px dashed var(--fg-2);border-radius:12px;padding:20px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.85rem;font-family:var(--ui)}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3)}
+.tscroll{overflow-x:auto}
+.pop{position:fixed;z-index:40;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-family:var(--ui);font-size:.8rem;max-width:280px;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.credits li{margin-bottom:6px}
+
+/* v0.6 */
+@media (min-width:641px){
+  .vtl{padding-left:0;display:grid;grid-template-columns:1fr 32px 1fr;column-gap:0}
+  .vtl::before{left:50%;margin-left:-1px}
+  .ev{grid-column:1/-1;display:grid;grid-template-columns:1fr 32px 1fr;margin-bottom:14px}
+  .ev .box{grid-column:1}
+  .ev:nth-child(even) .box{grid-column:3}
+  .ev::before{left:50%;margin-left:-5px;top:16px}
+  .ev:nth-child(odd) .box{text-align:right}
+  .ev:nth-child(odd) .box .tag{margin-right:0;margin-left:6px}
+}
+.mapctl{display:flex;justify-content:space-between;align-items:center;gap:10px;font-family:var(--mono);font-size:.78rem;color:var(--fg);margin-bottom:8px;flex-wrap:wrap}
+.map .dep.sel{stroke:var(--fg);stroke-width:2.5}
+.rowsel{cursor:pointer}.rowsel:hover td{background:var(--surface-2)}
+.clk{cursor:pointer}
+.vcirc svg{width:100%;height:auto;max-height:540px}
+.pop a{display:inline-block;margin-top:4px}
+.dnu{border:1px solid var(--line);border-left:4px solid var(--fg);border-radius:0 10px 10px 0;padding:14px 16px;background:var(--surface);margin:0 0 18px}
+.dnu .q{font-family:var(--display);font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:1.3rem;line-height:1.05}
+@media print{.rail,.bar,.index,.tip,.pop{display:none!important}.site{padding:0!important}.panel{display:none}.panel.cur{display:block;min-height:0}.rv{opacity:1!important;transform:none!important}details.fold{break-inside:avoid}body{background:#fff;color:#000}}
+
+/* v0.7 */
+.map.hero{max-width:none}
+.minis{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}
+@media (max-width:640px){.minis{grid-template-columns:1fr}}
+figure.ch.mini{margin:0;padding:14px 0 0}
+figure.ch.mini figcaption.top b{font-size:1rem}
+figure.ch.mini figcaption.top .howto{font-size:.85rem}
+details.fold.info{margin-top:8px}
+details.fold.info>summary{font-size:.8rem;color:var(--fg-3);font-weight:600}
+details.fold.info>.body{padding-top:4px}
+figcaption.top b{font-size:1.35rem;font-family:var(--display)}
+figure.ch.mini figcaption.top b{font-size:1rem;font-family:var(--display)}
+
+.votewrap{display:grid;grid-template-columns:3fr 2fr;gap:16px;align-items:start}
+@media (max-width:700px){.votewrap{grid-template-columns:1fr}}
+.vfix circle.vp{transition:fill .5s ease,opacity .5s ease}
+.vhist svg{width:100%;height:auto}
+
+/* v0.7.3 */
+#portada{position:relative;overflow:hidden}
+#portada .hero-in{position:relative;z-index:1}
+.bgmap{position:absolute;right:-8%;top:-4%;height:112%;width:auto;aspect-ratio:994/2098;z-index:0;pointer-events:none;opacity:.55}
+.bgmap svg{height:100%;width:auto;display:block}
+.bgmap .d{fill:var(--surface-2);stroke:var(--bg);stroke-width:.6}
+.bgmap .d.hi{fill:var(--alarm);opacity:.75}
+.bgmap .p{fill:none;stroke:var(--line);stroke-width:1.2}
+@media (prefers-reduced-motion:no-preference){
+  .bgmap{animation:drift 18s ease-in-out infinite alternate}
+  .bgmap .d.hi{animation:pulse 4s ease-in-out infinite alternate}
+  @keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-14px,-18px,0) scale(1.03)}}
+  @keyframes pulse{from{opacity:.45}to{opacity:.95}}
+}
+@media (max-width:640px){.bgmap{right:-30%;opacity:.35}}
+#portada .claim,#portada .verdict>div,#portada .lede{text-shadow:0 1px 0 var(--bg),0 0 18px var(--bg)}
+/* conflicts sector chips */
+.seccs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 10px}
+.seccs .chip i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+
+/* v0.8: one voice per level, readable on a phone, one unit, no scaffolding */
+:root{--fg-3:#8b958e}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){--fg-3:#5f6963;--off:#6d7771} }
+:root[data-theme="light"]{--fg-3:#5f6963;--off:#6d7771}
+figcaption.top b,figure.ch.mini figcaption.top b{font-family:var(--body);font-weight:600;text-transform:none;font-stretch:100%;font-size:1.4rem;line-height:1.2;letter-spacing:0}
+figure.ch.mini figcaption.top b{font-size:1.15rem}
+.card h3,.ev .t,.beat h3,h3.cap,.index li button,.dnu .q{text-transform:none;font-stretch:100%;letter-spacing:0}
+h3.cap{font-weight:700;font-size:1.2rem}
+.eyebrow .ix{display:none}
+.btn{min-height:44px}
+.chip{min-height:36px}
+.votewrap{grid-template-columns:1fr}
+.ticker{font-size:.8rem}
+.legend,.ramp{font-size:.85rem}
+.checked,.card .sub{font-size:.78rem}
+h2:focus,h1:focus{outline:none}
+.rowsel:focus-visible,.clk:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+@media (max-width:640px){
+  .brand{font-size:.74rem;letter-spacing:.02em;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .lang,.ixbtn{flex:none}
+  .rail .in{gap:6px}
+  .chip{min-height:44px}.lang button,.ixbtn{min-height:40px;padding-inline:12px}
+  figure.ch{overflow-x:auto}
+  figure.ch>svg,.vcirc svg,.vhist svg{min-width:520px}
+  body{font-size:16px}
+  .small{font-size:.92rem}
+}
+</style>
+</head>
+<body>
+<div class="site" id="site" data-lang="es">
+
+<div class="rail">
+  <div class="prog"><i id="prog"></i></div>
+  <div class="in">
+    <span class="brand"><i></i>Tierra en venta</span>
+    <button class="ixbtn" onclick="toggleIndex()"><span class="es">Índice</span><span class="en">Index</span></button>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button id="btn-es" aria-pressed="true" onclick="setLang('es')">ES</button>
+      <button id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+  <div class="ticker" id="ticker"></div>
+  <div class="minitl" id="minitl" hidden><div class="track" id="mt-track"></div><div class="lab"><span>2011</span><b id="mt-cur"></b><span>2026</span></div></div>
+</div>
+
+<div class="index" id="index" hidden><div class="in">
+  <div class="eyebrow"><span class="ix">00</span><span class="es">Índice</span><span class="en">Index</span></div>
+  <ol id="index-list"></ol>
+  <div style="margin-top:20px"><button class="btn" onclick="toggleIndex()"><span class="es">Cerrar</span><span class="en">Close</span></button></div>
+</div></div>
+
+<!-- 01 PORTADA -->
+<section class="panel cur" id="portada" data-es="Portada" data-en="Cover"><div class="bgmap" id="bgmap" aria-hidden="true"></div><div class="hero-in">
+  <div class="eyebrow"><span class="ix">01</span><span class="es">Observatorio y chequeo · Argentina</span><span class="en">Observatory and fact-check · Argentina</span></div>
+  <h1><span class="es">¿Están vendiendo el país?</span><span class="en">Are they selling the country?</span></h1>
+  <div class="stamp"><span class="es">Sin topes desde 2026-09-29 · revisado 2026-10-01</span><span class="en">No caps since 2026-09-29 · checked 2026-10-01</span></div>
+  <p class="lede"><span class="es">La tierra rural argentina quedó sin límites para compradores extranjeros el 29 de septiembre de 2026. El RIGI y el Súper RIGI protegen inversiones gigantes por treinta años. Son dos cosas distintas, y la frase que todos repiten las mezcla. Acá están los textos, las fechas, los números, el mapa y qué se puede hacer.</span><span class="en">Argentina's rural land lost all limits on foreign buyers on 29 September 2026. The RIGI and Súper RIGI shield giant investments for thirty years. They are two different things, and the sentence everyone repeats mixes them up. Here are the texts, the dates, the numbers, the map, and what can be done.</span></p>
+  <div class="claim"><span class="es">«El RIGI les permite vender la tierra libremente a los extranjeros.»</span><span class="en">"The RIGI lets them sell the land freely to foreigners."</span></div>
+  <div class="verdict">
+    <div class="k no"><span class="es">Falso como ley</span><span class="en">False as law</span></div>
+    <div><span class="lead-line"><span class="es">Ningún artículo del RIGI ni del Súper RIGI habla de tierra.</span><span class="en">No article of the RIGI or the Súper RIGI mentions land.</span></span>
+    <details class="fold quiet"><summary><span class="es">Ver por qué</span><span class="en">See why</span></summary><div class="body"><span class="es">Ni el RIGI (Ley 27.742, Título VII) ni el proyecto del Súper RIGI contienen un artículo sobre tierra rural, propiedad extranjera, agua o consulta indígena. Las palabras «tierra» y «dominio» no aparecen en ninguno de los dos textos.</span><span class="en">Neither the RIGI (Law 27.742, Title VII) nor the Súper RIGI bill contains an article about rural land, foreign ownership, water or indigenous consultation. The words "tierra" and "dominio" appear in neither text.</span> <span class="b bq" data-k="q">QUOTED</span><a class="src" href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/400000-404999/401266/norma.htm" target="_blank" rel="noopener">Infoleg</a></div></details></div>
+    <div class="k yes"><span class="es">Cierto como paquete</span><span class="en">True as a package</span></div>
+    <div><span class="lead-line"><span class="es">La tierra se abrió por un decreto, y el RIGI blinda a quien venga a explotarla.</span><span class="en">The land was opened by a decree, and the RIGI shields whoever comes to exploit it.</span></span>
+    <details class="fold quiet"><summary><span class="es">Ver cómo</span><span class="en">See how</span></summary><div class="body"><span class="es">La apertura de la tierra corre por otra vía: el artículo 154 del DNU 70/2023 derogó la Ley de Tierras de 2011. Un tribunal lo frenó en 2024. El 29 de septiembre de 2026 la Corte Suprema levantó ese freno por un tecnicismo, sin juzgar el fondo. Mientras tanto, el RIGI blinda proyectos mineros y petroleros contra impuestos nuevos, regulación provincial y tribunales locales. Veintiséis organizaciones llaman a las dos cosas «dos llaves de la misma cerradura».</span><span class="en">The land opening runs on a separate track: article 154 of Decree 70/2023 repealed the 2011 Land Law. A court froze that in 2024. On 29 September 2026 the Supreme Court lifted the freeze on a technicality, without ruling on the merits. Meanwhile the RIGI shields mining and oil projects from new taxes, provincial regulation and local courts. Twenty-six organisations call the two "two keys to the same lock".</span> <span class="b br" data-k="r">REPORTED</span><a class="src" href="https://www.lanacion.com.ar/politica/la-corte-suprema-dejo-en-vigencia-la-derogacion-de-la-ley-de-tierras-que-decreto-milei-en-2023-nid29092026/" target="_blank" rel="noopener">La Nación</a></div></details></div>
+  </div>
+  <div class="trust">
+    <span><b>191</b> <span class="es">enlaces a fuentes</span><span class="en">source links</span></span>
+    <span><b>512</b> <span class="es">departamentos mapeados</span><span class="en">departments mapped</span></span>
+    <span><b>7</b> <span class="es">votaciones nominales</span><span class="en">roll calls</span></span>
+    <span><b>58</b> <span class="es">conflictos con empresa</span><span class="en">conflicts with a company</span></span>
+    <span><span class="es">Método abierto · sin financiamiento</span><span class="en">Open method · no funding</span></span>
+  </div>
+  </div>
+</section>
+
+<!-- 02 AHORA -->
+<section class="panel" id="ahora" data-es="Qué hacer ahora" data-en="What to do now">
+  <div class="eyebrow"><span class="ix">02</span><span class="es">Llamado a la acción · con fecha y con números</span><span class="en">Call to action · dated and counted</span></div>
+  <h2><span class="es">Qué hacer ahora</span><span class="en">What to do now</span></h2>
+  <div class="countdown rv"><div class="big num" id="cd-days">–</div><div class="t" id="cd-text"></div></div>
+  <figure class="ch rv" id="ch-blocs"></figure>
+  <div class="acts">
+    <div class="act rv"><span class="k"><span class="es">Dónde</span><span class="en">Where</span></span><div><b><span class="es">Dónde se decide</span><span class="en">Where it is decided</span></b><br><span class="es">Cámara de Diputados, sesión especial del jueves 15 de octubre de 2026, 14:00. Se vota rechazar el DNU 70/2023 entero. El Senado ya lo rechazó en 2024; si Diputados también lo rechaza, el decreto cae y con él la derogación de la Ley de Tierras.</span><span class="en">Chamber of Deputies, special session on Thursday 15 October 2026, 14:00. The vote is to reject Decree 70/2023 whole. The Senate already rejected it in 2024; if Diputados does too, the decree falls and with it the repeal of the Land Law.</span> <a class="src" href="https://www.filo.news/noticia/2026/10/01/la-oposicion-cito-a-una-sesion-en-diputados-para-derogar-el-dnu-70-2023" target="_blank" rel="noopener">Filo News</a></div></div>
+    <div class="act rv"><span class="k"><span class="es">Quién</span><span class="en">Who</span></span><div><b><span class="es">Quién vota qué</span><span class="en">Who votes what</span></b><br><span class="es">Los bloques que convocan suman 119 de los 129 que hacen falta, según la composición oficial de la Cámara. Los votos que faltan están en Argentina Federal, la UCR, el PRO y los bloques chicos. Buscá a los diputados de tu provincia en la pantalla 09 y en «¿Cómo Votó?».</span><span class="en">The sponsoring blocs hold 119 of the 129 needed, per the Chamber's official composition. The missing votes sit with Argentina Federal, the UCR, the PRO and the small blocs. Find your province's deputies on screen 09 and at "¿Cómo Votó?".</span> <a class="src" href="https://comovoto.dev.ar/" target="_blank" rel="noopener">comovoto.dev.ar</a></div></div>
+    <div class="act rv"><span class="k"><span class="es">Hoy</span><span class="en">Today</span></span><div><b><span class="es">Cinco cosas que podés hacer esta semana</span><span class="en">Five things you can do this week</span></b><ol style="margin:6px 0 0;padding-left:1.2em"><li><span class="es">Escribirle a un diputado de tu provincia que no esté entre los 119. Pedirle que esté presente el 15 y vote el rechazo.</span><span class="en">Write to a deputy from your province who is not among the 119. Ask them to be present on the 15th and vote to reject.</span></li><li><span class="es">Adherir al amparo colectivo por la Ley de Glaciares (FARN, AAdeAA, Greenpeace).</span><span class="en">Join the collective injunction on the Glaciers Law (FARN, AAdeAA, Greenpeace).</span></li><li><span class="es">Reportar un conflicto territorial que conozcas al Observatorio de Tierras.</span><span class="en">Report a territorial conflict you know of to the Observatorio de Tierras.</span></li><li><span class="es">Llevar la guía de asamblea de esta pantalla a tu próxima reunión.</span><span class="en">Take this screen's assembly guide to your next meeting.</span></li><li><span class="es">Compartir el chequeo de la pantalla 04, no la frase.</span><span class="en">Share the fact-check on screen 04, not the slogan.</span></li></ol></div></div>
+  </div>
+  <h3 class="cap rv"><span class="es">Cinco carriles, un mismo tablero</span><span class="en">Five lanes, one board</span></h3>
+  <div class="lanes rv">
+    <svg viewBox="0 0 720 300" role="img" aria-label="Cinco carriles que llegan a Congreso, tribunales y territorio">
+      <defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--fg-3)"/></marker></defs>
+      <g id="lanes-g"></g>
+    </svg>
+  </div>
+  <details class="fold rv"><summary><span class="es">Quiénes ya están trabajando · 17 organizaciones, observatorios y medios</span><span class="en">Who is already working on it · 17 organisations, observatories and media</span></summary><div class="body">
+  <div class="orgs" id="orgs"></div>
+  </div></details>
+  <details class="fold rv"><summary><span class="es">Material para asamblea · seis cosas para decir en voz alta</span><span class="en">Assembly material · six things to say out loud</span></summary><div class="body">
+  <div class="guide"><ol>
+      <li><span class="es">La Ley de Tierras de 2011 está derogada y la derogación está vigente desde el 29 de septiembre de 2026. No hay topes.</span><span class="en">The 2011 Land Law is repealed and the repeal has been in force since 29 September 2026. There are no caps.</span></li>
+      <li><span class="es">La Corte no dijo que la derogación sea constitucional. Dijo que quien demandó no podía demandar. Un nuevo amparo con legitimación sigue abierto.</span><span class="en">The Court did not say the repeal is constitutional. It said the plaintiff could not sue. A new injunction with proper standing remains possible.</span></li>
+      <li><span class="es">El RIGI no vende tierra. Blinda proyectos por treinta años contra impuestos, provincias y jueces. Son dos peleas.</span><span class="en">The RIGI does not sell land. It shields projects for thirty years from taxes, provinces and judges. They are two fights.</span></li>
+      <li><span class="es">Diputados vota el 15 de octubre. Hacen falta 129; los bloques que convocan tienen 119. Faltan diputados, no argumentos.</span><span class="en">Diputados votes on 15 October. 129 are needed; the sponsoring blocs have 119. What is missing is deputies, not arguments.</span></li>
+      <li><span class="es">El Súper RIGI no es ley. Tiene media sanción y el Senado lo frenó en comisión el 2 de septiembre.</span><span class="en">The Súper RIGI is not law. It has half-sanction and the Senate stopped it in committee on 2 September.</span></li>
+      <li><span class="es">Hay 31 departamentos donde más del 15 % de la tierra rural ya es extranjera. El mapa está en la pantalla 06.</span><span class="en">There are 31 departments where more than 15% of rural land is already foreign-held. The map is on screen 06.</span></li>
+  </ol></div>
+  </div></details>
+  <h3 class="cap rv"><span class="es">Para el aula y la asamblea</span><span class="en">For the classroom and the assembly</span></h3>
+  <div class="acts">
+    <div class="act rv"><span class="k"><span class="es">Imprimir</span><span class="en">Print</span></span><div><b><span class="es">Imprimí esta pantalla como guía</span><span class="en">Print this screen as a guide</span></b><br><span class="es">Abrí las cajas que quieras llevar (la guía de asamblea, las organizaciones) y apretá imprimir.</span><span class="en">Open the boxes you want to take (the assembly guide, the organisations) and press print.</span><br><button class="btn" style="margin-top:8px" onclick="try{window.print()}catch(e){}"><span class="es">Imprimir esta pantalla</span><span class="en">Print this screen</span></button></div></div>
+  </div>
+</section>
+
+<!-- 03 ETAPA -->
+<section class="panel" id="etapa" data-es="En qué etapa estamos" data-en="What stage we are at">
+  <div class="eyebrow"><span class="ix">03</span><span class="es">Cuatro vías, cuatro estados · revisado 2026-10-01</span><span class="en">Four tracks, four states · checked 2026-10-01</span></div>
+  <h2><span class="es">¿En qué etapa estamos?</span><span class="en">What stage are we at?</span></h2>
+  <div class="board" id="board"></div>
+  <h3 class="cap rv"><span class="es">Cómo llegamos acá, hecho por hecho</span><span class="en">How we got here, fact by fact</span></h3>
+  <p class="small muted rv"><span class="es">Bajá. La línea de arriba avanza con vos.</span><span class="en">Scroll down. The line at the top moves with you.</span></p>
+  <div class="vtl" id="vtl"></div>
+</section>
+
+<!-- 04 FRASE -->
+<section class="panel" id="frase" data-es="La frase" data-en="The sentence">
+  <div class="eyebrow"><span class="ix">04</span><span class="es">La frase, desarmada en cuatro pasos</span><span class="en">The sentence, taken apart in four steps</span></div>
+  <h2><span class="es">Qué dice cada texto</span><span class="en">What each text says</span></h2>
+  <figure class="ch rv" id="ch-laws"></figure>
+  <div class="dnu rv"><div class="eyebrow" style="margin-bottom:6px"><span class="es">Lo que sí abrió la tierra, textual</span><span class="en">What actually opened the land, verbatim</span></div><div class="q">«Artículo 154. Derógase la Ley N° 26.737.»</div><p class="small muted" style="margin:8px 0 0"><span class="es">DNU 70/2023, diez palabras. Sus considerandos dicen que la ley «limita el derecho de propiedad sobre la tierra rural y las inversiones en el sector».</span><span class="en">Decree 70/2023, ten words. Its recitals say the law "limits the property right over rural land and investment in the sector".</span> <span class="b bq" data-k="q">TEXTO DE LEY</span><a class="src" href="https://www.boletinoficial.gob.ar/detalleAviso/primera/301122/20231221" target="_blank" rel="noopener">Boletín Oficial</a></p></div>
+  <details class="fold rv"><summary><span class="es">Leer los textos en cuatro pasos</span><span class="en">Read the texts in four steps</span></summary><div class="body" style="padding-top:12px">
+  <div class="beat"><div class="n">1</div><div>
+    <h3><span class="es">Lo que dice el RIGI</span><span class="en">What the RIGI says</span></h3>
+    <p><span class="es">El Título VII de la Ley 27.742 crea un régimen para proyectos de más de USD 200 millones. «Inmuebles» aparece una sola vez, como categoría de inversión computable, con tope del 15 por ciento del mínimo (art. 174). No hay artículo sobre tierra rural, ni sobre extranjeros.</span><span class="en">Title VII of Law 27.742 creates a regime for projects above USD 200 million. "Inmuebles" (real estate) appears once, as a countable investment category capped at 15 percent of the minimum (art. 174). There is no article on rural land, nor on foreigners.</span> <span class="b bq" data-k="q">QUOTED</span><a class="src" href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/400000-404999/401266/norma.htm" target="_blank" rel="noopener">Ley 27.742</a> <a class="src" href="https://rest.hcdn.gob.ar/web/tramites-parlamentarios/render/adjunto/6a159afe57a5e.pdf" target="_blank" rel="noopener">Mensaje 181/2026</a></p>
+  </div></div>
+  <div class="beat"><div class="n">2</div><div>
+    <h3><span class="es">Lo que sí abrió la tierra</span><span class="en">What actually opened the land</span></h3>
+    <p><span class="es">La Ley 26.737 (2011) ponía un tope del 15 por ciento de tierra rural en manos extranjeras, un subtope del 30 por ciento por nacionalidad, un máximo de 1.000 hectáreas por titular en zona núcleo y prohibía comprar tierras con grandes cuerpos de agua. El artículo 154 del DNU 70/2023 la derogó entera.</span><span class="en">Law 26.737 (2011) capped foreign-held rural land at 15 percent, with a 30 percent sub-cap per nationality, a 1,000 hectare maximum per holder in the core zone, and a ban on buying land with large water bodies. Article 154 of Decree 70/2023 repealed it whole.</span> <span class="b bq" data-k="q">QUOTED</span><a class="src" href="https://faolex.fao.org/docs/pdf/arg108188.pdf" target="_blank" rel="noopener">Ley 26.737</a> <span class="b br" data-k="r">REPORTED</span><a class="src" href="https://chequeado.com/el-explicador/que-se-sabe-sobre-la-derogacion-de-la-ley-de-tierras-por-parte-del-gobierno-de-javier-milei/" target="_blank" rel="noopener">Chequeado</a></p>
+    <p><span class="es">La Cámara Federal de La Plata declaró inconstitucional ese artículo el 21 de marzo de 2024. La Corte Suprema revocó ese fallo el 29 de septiembre de 2026 porque el CECIM, que había demandado, no tenía legitimación para hacerlo. La propia Corte aclaró que «no implica abrir juicio sobre la validez constitucional» del artículo.</span><span class="en">The La Plata Federal Court declared that article unconstitutional on 21 March 2024. The Supreme Court revoked that ruling on 29 September 2026 because CECIM, the plaintiff, lacked standing. The Court itself clarified that it "does not imply a judgment on the constitutional validity" of the article.</span> <span class="b br" data-k="r">REPORTED</span><a class="src" href="https://www.infobae.com/judiciales/2024/03/21/la-camara-federal-de-la-plata-declaro-inconstitucional-el-articulo-del-dnu-que-derogaba-la-ley-de-tierras/" target="_blank" rel="noopener">Infobae 2024</a> <a class="src" href="https://www.palabrasdelderecho.com.ar/articulo/7025/La-Corte-Suprema-revoco-el-fallo-que-habia-declarado-inconstitucional-el-DNU-que-derogo-la-Ley-de-Tierras" target="_blank" rel="noopener">Palabras del Derecho</a></p>
+  </div></div>
+  <div class="beat"><div class="n">3</div><div>
+    <h3><span class="es">Lo que hace el RIGI en cambio</span><span class="en">What the RIGI does instead</span></h3>
+    <p><span class="es">Treinta años de estabilidad fiscal, aduanera y cambiaria; arbitraje en el exterior; nulidad de normas provinciales o municipales que limiten el proyecto (arts. 165, 200, 201, 221). Veintitrés proyectos aprobados por USD 49.766 millones al 1 de octubre de 2026, casi todo minería e hidrocarburos. La ventana de adhesión se extendió hasta el 8 de julio de 2027.</span><span class="en">Thirty years of tax, customs and currency stability; arbitration abroad; nullity of provincial or municipal rules that limit the project (arts. 165, 200, 201, 221). Twenty-three projects approved for USD 49,766 million as of 1 October 2026, almost all mining and hydrocarbons. The adhesion window was extended to 8 July 2027.</span> <span class="b bq" data-k="q">QUOTED</span><a class="src" href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/400000-404999/401266/norma.htm" target="_blank" rel="noopener">Infoleg</a> <span class="b br" data-k="r">REPORTED</span><a class="src" href="https://www.argentina.gob.ar/economia/rigi" target="_blank" rel="noopener">Portal RIGI</a> <a class="src" href="https://monitor-rigi-desip-iiep.github.io/RIGI/" target="_blank" rel="noopener">Monitor RIGI (UBA)</a></p>
+  </div></div>
+  <div class="beat"><div class="n">4</div><div>
+    <h3><span class="es">Cómo las unen los críticos</span><span class="en">How critics tie them together</span></h3>
+    <div class="quote"><span class="es">«Dos llaves de la misma cerradura.»</span><span class="en">"Two keys to the same lock."</span> <span class="muted small"><span class="es">Documento conjunto de 26 organizaciones, agosto de 2026.</span><span class="en">Joint document by 26 organisations, August 2026.</span></span></div>
+    <p><span class="es">Es una tesis de incidencia política, no una referencia cruzada en los textos legales. El gobierno retiró el capítulo de tierras de su proyecto el 5 de agosto de 2026 cuando no le dieron los votos, y siguió empujando el Súper RIGI. Esa secuencia es el mejor argumento de que son dos vías que se refuerzan, y también la prueba de que se pueden frenar por separado.</span><span class="en">It is an advocacy thesis, not a cross-reference in the legal texts. The government withdrew the land chapter from its bill on 5 August 2026 when the votes fell short, and kept pushing the Súper RIGI. That sequence is the best argument that the two tracks reinforce each other, and also proof that they can be stopped separately.</span> <span class="b bq" data-k="q">QUOTED</span><a class="src" href="https://aadeaa.org/wp-content/uploads/2026/08/EL-SENADO-DE-REMATE-Documento-conjunto-de-la-sociedad-civil-EMBARGADO-3-de-agosto-de-2026-12_00-1.pdf" target="_blank" rel="noopener">El Senado de remate (PDF)</a> <span class="b br" data-k="r">REPORTED</span><a class="src" href="https://www.infobae.com/politica/2026/08/05/ley-de-tierras-el-oficialismo-dio-de-baja-el-capitulo-que-genero-debate-para-avanzar-con-la-sesion-de-manana/" target="_blank" rel="noopener">Infobae</a> <span class="b bi" data-k="i">INFERRED</span></p>
+  </div></div>
+  </div></details>
+</section>
+
+<!-- 05 INTERRUPTORES -->
+<section class="panel" id="interruptores" data-es="¿Hay tope hoy?" data-en="Is there a cap today?">
+  <div class="eyebrow"><span class="ix">05</span><span class="es">La Ley de Tierras, prendida y apagada</span><span class="en">The Land Law, switched on and off</span></div>
+  <h2><span class="es">¿Hay tope hoy? No.</span><span class="en">Is there a cap today? No.</span></h2>
+  <figure class="ch rv" id="ch-switch"></figure>
+  <details class="fold quiet rv"><summary><span class="es">Dos aclaraciones</span><span class="en">Two notes</span></summary><div class="body">
+  <p class="small muted" style="margin:0"><span class="es">La fecha del DNU es la de publicación en el Boletín Oficial. El certificado del Registro siguió emitiéndose durante la cautelar; qué hace el Registro desde el fallo es una pregunta abierta, por eso su línea termina en punteado.</span><span class="en">The decree date is its publication in the Official Gazette. The Registry kept issuing certificates while the injunction held; what the Registry does since the ruling is an open question, so its line ends dotted.</span> <span class="b bi" data-k="i">INFERRED</span><a class="src" href="https://www.argentina.gob.ar/justicia/tierrasrurales" target="_blank" rel="noopener">Registro</a></p>
+  </div></details>
+</section>
+
+<!-- 06 DÓNDE -->
+<section class="panel" id="donde" data-es="Dónde" data-en="Where">
+  <div class="eyebrow"><span class="ix">06</span><span class="es">512 departamentos · datos oficiales a agosto de 2025</span><span class="en">512 departments · official data to August 2025</span></div>
+  <h2><span class="es">Dónde ya pasó</span><span class="en">Where it has already happened</span></h2>
+  <figcaption class="top rv" style="display:block;margin-bottom:6px"><b style="display:block;font-family:var(--body);font-weight:600;font-size:1.4rem;line-height:1.2;color:var(--fg);margin-bottom:6px"><span class="es">Catorce de los 31 departamentos sobre el tope están en Salta y Misiones</span><span class="en">Fourteen of the 31 departments over the cap are in Salta and Misiones</span></b><span class="howto" style="display:block;font-family:var(--body);font-size:.95rem;color:var(--fg-2)"><span class="es">Cada departamento está pintado según cuánta de su tierra rural es extranjera. Borde naranja: supera el 15 % que la ley de 2011 ponía como tope. Los círculos blancos son los 23 proyectos RIGI aprobados, por provincia, con tamaño según la inversión.</span><span class="en">Each department is shaded by how much of its rural land is foreign-held. Orange border: above the 15% cap of the 2011 law. White circles are the 23 approved RIGI projects, by province, sized by investment.</span></span></figcaption>
+  <div class="map hero rv" id="map1"></div>
+  <details class="fold quiet rv"><summary><span class="es">Los diez departamentos más extranjerizados · tocá uno para verlo</span><span class="en">The ten most foreign-held departments · tap one to see it</span></summary><div class="body"><div class="tscroll" id="top10"></div></div></details>
+  <div class="minis"><figure class="ch mini rv" id="ch-deps"></figure></div>
+</section>
+
+<!-- 07 CUÁNTO -->
+<section class="panel" id="cuanto" data-es="Cuánto" data-en="How much">
+  <div class="eyebrow"><span class="ix">07</span><span class="es">Cuánta tierra, cuánto creció, cuántas compras</span><span class="en">How much land, how much it grew, how many purchases</span></div>
+  <h2><span class="es">Cuánto</span><span class="en">How much</span></h2>
+  <figure class="ch rv" id="ch-hect"></figure>
+  <div class="minis">
+    <figure class="ch mini rv" id="ch-land"></figure>
+    <figure class="ch mini rv" id="ch-certs"></figure>
+  </div>
+</section>
+
+<!-- 08 QUIÉN -->
+<section class="panel" id="quien" data-es="Quién" data-en="Who">
+  <div class="eyebrow"><span class="ix">08</span><span class="es">De quién es la tierra, y a quién va la plata del RIGI</span><span class="en">Whose the land is, and where the RIGI money goes</span></div>
+  <h2><span class="es">Quién</span><span class="en">Who</span></h2>
+  <figure class="ch rv" id="ch-nat"></figure>
+  <div class="minis"><figure class="ch mini rv" id="ch-sector"></figure></div>
+</section>
+
+<!-- 09 VOTOS -->
+<section class="panel" id="votos" data-es="Quién votó qué" data-en="Who voted what">
+  <div class="eyebrow"><span class="ix">09</span><span class="es">Siete votaciones nominales · actas oficiales vía «¿Cómo Votó?»</span><span class="en">Seven roll calls · official records via "¿Cómo Votó?"</span></div>
+  <h2><span class="es">Quién votó qué</span><span class="en">Who voted what</span></h2>
+  <p class="small muted rv"><span class="es">Un solo dibujo por cámara: cada círculo grande es un bloque y cada punto una persona, siempre en el mismo lugar. Al elegir otra votación solo cambian los colores. La Ley de Tierras nunca llegó a votarse: el capítulo se retiró antes.</span><span class="en">One drawing per chamber: each large circle is a bloc and each dot a person, always in the same place. Picking another roll call only changes the colours. The Land Law was never voted: the chapter was withdrawn first.</span></p>
+  <div id="votes"></div>
+</section>
+
+<!-- 10 CONFLICTOS -->
+<section class="panel" id="conflictos" data-es="Conflictos" data-en="Conflicts">
+  <div class="eyebrow"><span class="ix">10</span><span class="es">Contra qué empresas se está luchando</span><span class="en">Which companies are being fought</span></div>
+  <h2><span class="es">Conflictos territoriales</span><span class="en">Territorial conflicts</span></h2>
+  <figcaption class="top rv" style="display:block;margin-bottom:6px"><b style="display:block;font-family:var(--body);font-weight:600;font-size:1.4rem;line-height:1.2;color:var(--fg);margin-bottom:6px"><span class="es">La minería explica 23 de los 58 conflictos; Catamarca y Neuquén concentran los más</span><span class="en">Mining explains 23 of the 58 conflicts; Catamarca and Neuquén hold the most</span></b><span class="howto" style="display:block;font-family:var(--body);font-size:.95rem;color:var(--fg-2)"><span class="es">Cada punto es un conflicto, coloreado por sector, con la empresa involucrada. Tocá un punto o una barra para ver las fuentes. Reunidos del Atlas de Justicia Ambiental, OCMAL, el Observatorio de Tierras y prensa: una muestra, no un censo.</span><span class="en">Each dot is one conflict, coloured by sector, with the company involved. Tap a dot or a bar to see the sources. Gathered from the Environmental Justice Atlas, OCMAL, the Observatorio de Tierras and press: a sample, not a census.</span></span></figcaption>
+  <figure class="ch rv" id="ch-cos"></figure>
+  <div class="map rv" id="map2"></div>
+  <div id="cflist"></div>
+</section>
+
+<!-- 12 CHARLA -->
+<section class="panel" id="creditos" data-es="Créditos y método" data-en="Credits and method">
+  <div class="eyebrow"><span class="ix">12</span><span class="es">De dónde sale cada dato</span><span class="en">Where each figure comes from</span></div>
+  <h2><span class="es">Créditos y método</span><span class="en">Credits and method</span></h2>
+  <details class="fold rv" open><summary><span class="es">Gracias y créditos · de dónde sale cada dato</span><span class="en">Thanks and credits · where each dataset comes from</span></summary><div class="body small">
+  <ul class="credits">
+    <li><b>¿Cómo Votó?</b> (Rodrigo Quiroga, CONICET): <span class="es">las votaciones nominales con nombre y bloque salen de las actas oficiales de Diputados y del Senado, reunidas por su sitio. Gracias.</span><span class="en">roll calls by name and bloc come from the official Diputados and Senate records, gathered by his site. Thank you.</span> <a class="src" href="https://comovoto.dev.ar/" target="_blank" rel="noopener">comovoto.dev.ar</a> <a class="src" href="https://github.com/rquiroga7/como_voto" target="_blank" rel="noopener">GitHub</a></li>
+    <li><b><span class="es">Límites departamentales:</span><span class="en">Department boundaries:</span></b> FUENTE: Instituto Geográfico Nacional de la República Argentina (capa Departamento, descargada el 2026-10-01; geometría simplificada). <span class="es">El IGN no participa ni avala esta página.</span><span class="en">The IGN neither takes part in nor endorses this page.</span> <a class="src" href="https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG" target="_blank" rel="noopener">IGN</a></li>
+    <li><b><span class="es">Extranjerización por departamento:</span><span class="en">Foreign ownership by department:</span></b> Ministerio de Justicia de la Nación, Registro Nacional de Tierras Rurales, <span class="es">actualización agosto de 2025, argentina.gob.ar, licencia CC BY 4.0. Tablas reordenadas y unidas a los límites del IGN por este sitio.</span><span class="en">updated August 2025, argentina.gob.ar, CC BY 4.0. Tables reordered and joined to IGN boundaries by this site.</span> <a class="src" href="https://www.argentina.gob.ar/justicia/tierrasrurales/datos/extranjerizacion-departamento" target="_blank" rel="noopener">RNTR</a></li>
+    <li><b>Observatorio de Tierras (UBA, MILPA):</b> <span class="es">su mapa fue la referencia para chequear la unión de datos; sus informes mensuales son la mejor lectura de estos números.</span><span class="en">its map was the reference for checking the data join; its monthly reports are the best reading of these numbers.</span> <a class="src" href="https://www.observatoriodetierras.ar/" target="_blank" rel="noopener">observatoriodetierras.ar</a></li>
+    <li><b>Monitor RIGI (DESIP-IIEP, UBA)</b> <span class="es">y el portal oficial del RIGI: lista de proyectos, provincias e inversión.</span><span class="en">and the official RIGI portal: project list, provinces and investment.</span> <a class="src" href="https://monitor-rigi-desip-iiep.github.io/RIGI/" target="_blank" rel="noopener">Monitor</a> <a class="src" href="https://www.argentina.gob.ar/economia/rigi" target="_blank" rel="noopener">Portal</a></li>
+    <li><b>Chequeado:</b> <span class="es">series de hectáreas y certificados, y el explicador del fallo.</span><span class="en">hectare and certificate series, and the explainer on the ruling.</span> <a class="src" href="https://chequeado.com/" target="_blank" rel="noopener">chequeado.com</a></li>
+    <li><b><span class="es">Conflictos:</span><span class="en">Conflicts:</span></b> EJAtlas (2026). Global Atlas of Environmental Justice, www.ejatlas.org (CC BY-NC-SA 3.0); Observatorio de Conflictos Mineros de América Latina (OCMAL, CC BY 3.0); Observatorio de Tierras; <span class="es">y prensa citada en cada ficha.</span><span class="en">and press cited on each card.</span> <a class="src" href="https://ejatlas.org/" target="_blank" rel="noopener">EJAtlas</a> <a class="src" href="https://www.ocmal.org/" target="_blank" rel="noopener">OCMAL</a></li>
+    <li><b><span class="es">Contornos de provincias:</span><span class="en">Province outlines:</span></b> Natural Earth, <span class="es">dominio público.</span><span class="en">public domain.</span></li>
+    <li><b><span class="es">Cómo están hechos los gráficos:</span><span class="en">How the charts are made:</span></b> <span class="es">siguen reglas de Datawrapper Academy, Our World in Data, Flourish, The Pudding y el Visual Vocabulary del FT: el titular dice el hallazgo, un cuadrado es una cosa real, el umbral legal se dibuja y se explica, las series con cambio de método no se unen, los huecos quedan a la vista.</span><span class="en">they follow rules from Datawrapper Academy, Our World in Data, Flourish, The Pudding and the FT Visual Vocabulary: the headline states the finding, a square is one real thing, the legal threshold is drawn and explained, series with a method change are not joined, gaps stay visible.</span> <a class="src" href="https://academy.datawrapper.de/" target="_blank" rel="noopener">Datawrapper</a> <a class="src" href="https://ourworldindata.org/" target="_blank" rel="noopener">OWID</a> <a class="src" href="https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary" target="_blank" rel="noopener">FT</a></li>
+  </ul>
+  <h3><span class="es">Método</span><span class="en">Method</span></h3>
+  <p><span class="es">Investigación de solo lectura hecha el 1 de octubre de 2026 sobre unas 240 páginas web, los textos completos de las leyes, las actas de votación y los datos oficiales del Registro. Cada afirmación lleva una etiqueta:</span><span class="en">Read-only research done on 1 October 2026 across about 240 web pages, the full statute texts, the voting records and the Registry's official data. Every claim carries a label:</span> <span class="b bq">TEXTO DE LEY</span> <span class="es">lo leímos en la ley, el fallo o el documento oficial;</span><span class="en">we read it in the law, the ruling or the official document;</span> <span class="b br">PRENSA O INFORME</span> <span class="es">lo dice un diario, un chequeo o un informe, y lo citamos;</span><span class="en">a newspaper, a fact-check or a report says so, and we cite it;</span> <span class="b bi">LECTURA NUESTRA</span> <span class="es">es nuestra interpretación y puede estar equivocada.</span><span class="en">it is our interpretation and it can be wrong.</span></p>
+  <h3><span class="es">Donde las fuentes no coinciden</span><span class="en">Where sources disagree</span></h3>
+  <div class="tscroll"><table>
+    <tr><th><span class="es">Dato</span><span class="en">Item</span></th><th><span class="es">Versiones</span><span class="en">Versions</span></th></tr>
+    <tr><td><span class="es">Fecha del fallo de la Corte</span><span class="en">Date of the Supreme Court ruling</span></td><td>2026-09-29 (Infobae, Ámbito, Palabras del Derecho) · 2026-09-30 (Chequeado, La Nación) · 2026-10-01 (Tierra Viva)</td></tr>
+    <tr><td><span class="es">Certificados a extranjeros en 2025</span><span class="en">Foreign purchase certificates in 2025</span></td><td>29 (Chequeado, Min. Justicia) · 48 solo enero a mayo (Jefatura de Gabinete, Informe 143). <span class="es">Sin resolver.</span><span class="en">Unresolved.</span></td></tr>
+    <tr><td><span class="es">Departamentos sobre el 15 %</span><span class="en">Departments above 15%</span></td><td>31 (PDF del Registro, agosto 2025, y Chequeado) · 36 (mapa UBA-CONICET, que redondea: cinco departamentos entre 14,7 y 14,9 % cuentan como «alto»)</td></tr>
+    <tr><td><span class="es">Proyectos RIGI</span><span class="en">RIGI projects</span></td><td>23 aprobados en todas las fuentes · en evaluación: 19 (Monitor RIGI) o 24 (portal oficial) · 42 (Observatorio del RIGI, ago. 2026) · 39 (Globaris). <span class="es">Cuentan cosas distintas y con fechas distintas.</span><span class="en">They count different things on different dates.</span></td></tr>
+    <tr><td><span class="es">Votos que faltan en Diputados</span><span class="en">Votes missing in Diputados</span></td><td>10 (composición oficial: 119 de 129) · 16 (Grabois) · 20 (otra cuenta de prensa)</td></tr>
+  </table></div>
+  <h3><span class="es">Registro de cambios</span><span class="en">Change log</span></h3>
+  <p class="mono">2026-10-05 · v0.8 · <span class="es">cinco revisiones aplicadas (tres modelos, cinco rúbricas de GitHub, lista de Evergreen): mayúsculas solo en títulos de pantalla; teléfono legible; el naranja y el cuadrado significan una sola cosa; votos con el historial plegado; sin textos provisorios; la banda muestra la votación del 15 de octubre.</span><span class="en">five reviews applied (three models, five GitHub rubrics, the Evergreen checklist): capitals only on screen titles; readable on a phone; orange and the square mean one thing; votes with the history folded; no placeholder text; the band shows the 15 October vote.</span><br>2026-10-02 · v0.7.3 · <span class="es">portada con el mapa de fondo en movimiento lento y los 31 departamentos latiendo; «¿Hay tope hoy? No.» como título; conflictos con botones chicos por sector.</span><span class="en">cover with the map slowly drifting in the background and the 31 departments pulsing; "Is there a cap today? No." as title; conflicts with small sector chips.</span><br>2026-10-02 · v0.7.2 · <span class="es">auditoría Evergreen (82 % de página): tres errores corregidos (color en el texto del hemiciclo, banda «apagada» hasta hoy y no hasta fin de año, 2016-17 a prorrata), sectores sin repetir colores, texto de gráficos más grande, menos cajas, titulares en los mapas.</span><span class="en">Evergreen audit (82% page score): three bugs fixed (hemicycle text colour, "off" band to today not year end, 2016-17 prorated), no colour reuse across sectors, larger chart text, fewer boxes, headlines on the maps.</span><br>2026-10-02 · v0.7.1 · <span class="es">votos: un dibujo fijo por cámara que cambia de color según la votación elegida, más el historial por bloque.</span><span class="en">votes: one fixed drawing per chamber recoloured by the chosen roll call, plus the history by bloc.</span><br>2026-10-02 · v0.7 · <span class="es">crítica de diseño aplicada: un gráfico protagonista por pantalla (Dónde, Cuánto, Quién, Votos); naranja solo para tierra extranjera; la mitad del texto detrás de un botón de información; pies en tipografía de lectura.</span><span class="en">design critique applied: one hero chart per screen (Where, How much, Who, Votes); orange only for foreign land; half the text behind an info button; captions in reading type.</span><br>2026-10-02 · v0.6.2 · <span class="es">prendido apagado en una sola banda con duraciones; crecimiento con dos pilas; leyendas fuera de la caja; el gráfico de departamentos primero; cada bloque se dibuja por separado y muestra su error si falla.</span><span class="en">on-off as one band with durations; growth with two stacks; legends outside the box; departments chart first; each block draws separately and shows its error if it fails.</span><br>2026-10-02 · v0.6.1 · <span class="es">nacionalidades: las 14 de la tabla oficial de 2022, sin «resto del mundo».</span><span class="en">nationalities: all 14 from the official 2022 table, no "rest of the world".</span><br>2026-10-02 · v0.6 · <span class="es">tres poderes con color; línea de tiempo al centro; franja de estados; página 4 como conteo de palabras en las leyes; crecimiento en cuadrados; los 31 sobre el mapa; votos en círculos por bloque; zoom a departamento; fuentes al tocar conflictos; imprimir y mail; etiquetas más claras.</span><span class="en">three powers coloured; centred timeline; status strip; page 4 as word counts in the laws; growth as squares; the 31 on the map; votes as circles by bloc; zoom to department; sources on tap for conflicts; print and email; clearer labels.</span><br>2026-10-02 · v0.5 · <span class="es">gráficos pedagógicos: titular con el hallazgo, una unidad real por cuadrado, umbrales explicados, series rotas sin unir, huecos visibles, hemiciclo de Diputados, comparación con Santa Fe.</span><span class="en">pedagogical charts: finding as headline, one real unit per square, thresholds explained, broken series left unjoined, visible gaps, Diputados hemicycle, Santa Fe comparison.</span><br>2026-10-02 · v0.4 · <span class="es">diez pantallas; línea de tiempo vertical; gráfico de interruptores; mapa por departamento; votaciones nominales; conflictos con empresas; sesión del 15 de octubre.</span><span class="en">ten screens; vertical timeline; switch chart; department map; roll calls; conflicts with companies; 15 October session.</span><br>2026-10-01 · v0.3 · <span class="es">una pantalla por sección, contador, rediseño.</span><span class="en">one screen per section, countdown, redesign.</span><br>2026-10-01 · v0.2 · <span class="es">mismo contenido, desplegado de a poco.</span><span class="en">same content, revealed step by step.</span><br>2026-10-01 · v0.1 · <span class="es">primer prototipo.</span><span class="en">first prototype.</span></p>
+  <p><span class="es">Sin financiamiento. Sin dinero de empresas. Los informes completos (ocho, unas 30.000 palabras) están disponibles a pedido.</span><span class="en">No funding. No company money. The full reports (eight, about 30,000 words) are available on request.</span></p>
+  </div></details>
+</section>
+
+<div class="bar"><div class="in">
+  <button class="btn" id="nav-prev" onclick="go(-1)"><span class="es">← Anterior</span><span class="en">← Back</span></button>
+  <div class="pos" id="pos"></div>
+  <button class="btn primary" id="nav-next" onclick="go(1)"><span class="es">Siguiente →</span><span class="en">Next →</span></button>
+</div></div>
+</div>
+
+<div class="tip" id="tip" hidden></div>
+<div class="pop" id="pop" hidden></div>
+
+<script>
+const site=document.getElementById('site'); site.classList.add('js');
+function setLang(l){site.dataset.lang=l;document.getElementById('btn-es').setAttribute('aria-pressed',l==='es');document.getElementById('btn-en').setAttribute('aria-pressed',l==='en');try{localStorage.setItem('lang',l)}catch(e){}render();}
+const L=()=>site.dataset.lang;
+const T=(es,en)=>L()==='es'?es:en;
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+const fmt=n=>new Intl.NumberFormat(L()==='es'?'es-AR':'en-US').format(n);
+const dec=(n,d)=>Number(n).toFixed(d).replace('.',L()==='es'?',':'.');
+
+/* ---------- STATIC DATA ---------- */
+const CHECKED='2026-10-01', SESSION='2026-10-15';
+const BOARD=[
+ {es:'Decreto de tierras',en:'Land decree',sub:'DNU 70/2023 · art. 154',state:'on',st:{es:'En vigencia',en:'In force'},
+  last:{d:'2026-09-29',es:'La Corte Suprema revoca el fallo que lo frenaba, por falta de legitimación del demandante.',en:'The Supreme Court revokes the ruling that froze it, for the plaintiff\'s lack of standing.'},
+  next:{d:'2026-10-15',es:'Sesión especial en Diputados para rechazar el DNU. Hacen falta 129 presentes y 129 votos.',en:'Special session in Diputados to reject the decree. 129 present and 129 votes needed.'},
+  src:'https://www.filo.news/noticia/2026/10/01/la-oposicion-cito-a-una-sesion-en-diputados-para-derogar-el-dnu-70-2023'},
+ {es:'Ley de tierras (nueva)',en:'Land law (new)',sub:'Proyecto PE-13/2026 · cap. III',state:'off',st:{es:'Retirado',en:'Withdrawn'},
+  last:{d:'2026-08-05',es:'El oficialismo da de baja el capítulo de tierras para salvar la sesión del Senado.',en:'The government drops the land chapter to save the Senate session.'},
+  next:{d:'sin fecha',es:'El gobierno evalúa reflotarlo en Diputados «con algún límite».',en:'The government weighs reviving it in Diputados "with some limit".'},
+  src:'https://www.infobae.com/politica/2026/09/30/el-gobierno-evalua-reflotar-la-ley-de-tierras-en-el-congreso-para-proteger-el-dnu-70-que-la-oposicion-quiere-rechazar/'},
+ {es:'RIGI',en:'RIGI',sub:'Ley 27.742 · Título VII',state:'law',st:{es:'Ley desde 2024-07-08',en:'Law since 2024-07-08'},
+  last:{d:'2026-10-01',es:'23 proyectos aprobados por USD 49.766 millones; 19 a 24 en evaluación.',en:'23 projects approved for USD 49,766 million; 19 to 24 under evaluation.'},
+  next:{d:'2027-07-08',es:'Cierre de la ventana de adhesión, ya extendida una vez.',en:'Adhesion window closes, after one extension.'},
+  src:'https://www.argentina.gob.ar/economia/rigi'},
+ {es:'Súper RIGI',en:'Súper RIGI',sub:'Mensaje 181/2026',state:'hold',st:{es:'Trabado en el Senado',en:'Stalled in the Senate'},
+  last:{d:'2026-09-02',es:'Fracasa el dictamen de comisión. Tenía media sanción de Diputados (130 a 106) desde el 24 de junio.',en:'Committee report fails. It had half-sanction from Diputados (130 to 106) since 24 June.'},
+  next:{d:'sin fecha',es:'Nuevo intento de dictamen.',en:'A new attempt at a committee report.'},
+  src:'https://www.infobae.com/politica/2026/09/02/senado-aliados-de-la-ucr-el-pro-y-el-pj-disidente-frenaron-el-dictamen-del-super-rigi/'}
+];
+const EVENTS=[
+ {d:'2011-12-22',t:'land',es:'Nace la Ley de Tierras',en:'The Land Law is born',b:{es:'El Senado aprueba la Ley 26.737 por 62 votos a 1: tope del 15 % de tierra rural extranjera, 1.000 ha por titular, sin grandes cuerpos de agua.',en:'The Senate passes Law 26.737, 62 to 1: 15% cap on foreign rural land, 1,000 ha per holder, no large water bodies.'},src:'https://www.diariodecuyo.com.ar/argentina/Limitan-venta-de-tierras-a-los-extranjeros-20111223-0051.html'},
+ {d:'2016-06-30',t:'land',es:'Cambia la definición de «extranjero»',en:'The definition of "foreign" changes',b:{es:'El Decreto 820/2016 cambia cómo se cuentan sociedades, sucesiones y tenencias indirectas. Por eso las cifras de 2013 a 2017 y las de 2018 en adelante no son comparables.',en:'Decree 820/2016 changes how companies, estates and indirect holdings are counted. That is why the 2013 to 2017 figures and the 2018 onward figures are not comparable.'},src:'https://www.observatoriodetierras.ar/2025/12/la-extranjerizacion-de-tierras-en.html'},
+ {d:'2023-12-21',t:'land',es:'El DNU 70/2023 deroga la ley',en:'Decree 70/2023 repeals the law',b:{es:'Se publica el decreto. Su artículo 154 deroga la Ley 26.737 entera.',en:'The decree is published. Its article 154 repeals Law 26.737 whole.'},src:'https://chequeado.com/el-explicador/que-se-sabe-sobre-la-derogacion-de-la-ley-de-tierras-por-parte-del-gobierno-de-javier-milei/'},
+ {d:'2024-01-29',t:'land',es:'Un juez frena el artículo 154',en:'A judge freezes article 154',b:{es:'El juez Kreplak lo suspende en un amparo colectivo del CECIM La Plata, ex combatientes de Malvinas.',en:'Judge Kreplak suspends it in a collective injunction by CECIM La Plata, Malvinas veterans.'},src:'https://aldiaargentina.microjuris.com/2024/02/01/fallos-regimen-de-proteccion-al-dominio-nacional-sobre-la-propiedad-posesion-o-tenencia-de-tierras-rurales-suspension-preventiva-del-art-154-del-dnu-70-2023-en-cuanto-deroga-la-ley-26-737/'},
+ {d:'2024-03-14',t:'land',es:'El Senado rechaza el DNU',en:'The Senate rejects the decree',b:{es:'42 a 25. Diputados nunca lo vota, así que el decreto sobrevive. Esa votación pendiente es la del 15 de octubre de 2026.',en:'42 to 25. Diputados never votes, so the decree survives. That pending vote is the one of 15 October 2026.'},src:'https://www.senado.gob.ar/votaciones/detalleActa/2441'},
+ {d:'2024-03-21',t:'land',es:'La Cámara de La Plata lo declara inconstitucional',en:'The La Plata Court declares it unconstitutional',b:{es:'Sala III: derogar por conveniencia con el Congreso en sesiones no es una necesidad ni una urgencia.',en:'Chamber III: repealing for convenience while Congress is in session is neither necessary nor urgent.'},src:'https://www.infobae.com/judiciales/2024/03/21/la-camara-federal-de-la-plata-declaro-inconstitucional-el-articulo-del-dnu-que-derogaba-la-ley-de-tierras/'},
+ {d:'2024-07-08',t:'rigi',es:'Nace el RIGI',en:'The RIGI is born',b:{es:'Se publica la Ley 27.742 (Ley Bases). Diputados la había sancionado 147 a 107 el 28 de junio.',en:'Law 27.742 (Ley Bases) is published. Diputados had passed it 147 to 107 on 28 June.'},src:'https://www.boletinoficial.gob.ar/detalleAviso/primera/310189/20240708'},
+ {d:'2026-02-26',t:'glac',es:'El Senado reforma la Ley de Glaciares',en:'The Senate reforms the Glaciers Law',b:{es:'40 a 31. Abre zonas periglaciares a la minería.',en:'40 to 31. Opens periglacial zones to mining.'},src:'https://www.senado.gob.ar/votaciones/detalleActa/2657'},
+ {d:'2026-03-26',t:'ley',es:'Llega el proyecto de propiedad privada',en:'The private property bill arrives',b:{es:'Con un capítulo que reemplaza la Ley de Tierras por un tope del 25 % por provincia.',en:'With a chapter replacing the Land Law with a 25% cap per province.'},src:'https://chequeado.com/el-explicador/claves-del-proyecto-de-ley-sobre-inviolabilidad-de-la-propiedad-privada-que-impulsa-el-gobierno-de-milei/'},
+ {d:'2026-04-08',t:'glac',es:'Diputados sanciona Glaciares',en:'Diputados passes Glaciers',b:{es:'137 a 111. Es la Ley 27.804, promulgada el 24 de abril. El 5 de mayo se presenta un amparo colectivo con más de 850.000 adherentes.',en:'137 to 111. It becomes Law 27.804, promulgated on 24 April. On 5 May a collective injunction with over 850,000 adherents is filed.'},src:'https://www.cels.org.ar/web/2026/05/ley-de-glaciares-demanda-colectiva-con-mas-de-850-mil-adherentes/'},
+ {d:'2026-06-24',t:'super',es:'Media sanción al Súper RIGI',en:'Half-sanction for the Súper RIGI',b:{es:'Diputados, 130 a 106, 7 abstenciones.',en:'Diputados, 130 to 106, 7 abstentions.'},src:'https://www.hcdn.gob.ar/prensa/noticia/DIPUTADOS-LE-DIO-MEDIA-SANCION-AL-SUPER-RIGI-QUE-INCENTIVA-GRANDES-INVERSIONES-EN-NUEVAS-INDUSTRIAS/'},
+ {d:'2026-08-05',t:'ley',es:'Se retira el capítulo de tierras',en:'The land chapter is withdrawn',b:{es:'No había votos. Al día siguiente el resto de la ley pasa el Senado 37 a 33. Afuera, 250 heridos.',en:'The votes were not there. The next day the rest of the bill passes the Senate 37 to 33. Outside, 250 injured.'},src:'https://www.infobae.com/politica/2026/08/05/ley-de-tierras-el-oficialismo-dio-de-baja-el-capitulo-que-genero-debate-para-avanzar-con-la-sesion-de-manana/'},
+ {d:'2026-09-02',t:'super',es:'El Súper RIGI se traba en el Senado',en:'The Súper RIGI stalls in the Senate',b:{es:'Fracasa el dictamen de comisión por aliados de la UCR, el PRO y el PJ disidente.',en:'The committee report fails on UCR, PRO and dissident PJ allies.'},src:'https://www.infobae.com/politica/2026/09/02/senado-aliados-de-la-ucr-el-pro-y-el-pj-disidente-frenaron-el-dictamen-del-super-rigi/'},
+ {d:'2026-09-29',t:'land',es:'La Corte revoca el freno',en:'The Court lifts the freeze',b:{es:'Por falta de legitimación del CECIM, sin juzgar el fondo. La derogación vuelve a operar. No hay topes.',en:'For CECIM\'s lack of standing, without ruling on the merits. The repeal operates again. There are no caps.'},src:'https://www.palabrasdelderecho.com.ar/articulo/7025/La-Corte-Suprema-revoco-el-fallo-que-habia-declarado-inconstitucional-el-DNU-que-derogo-la-Ley-de-Tierras'},
+ {d:'2026-10-15',t:'land',es:'Diputados vota el DNU',en:'Diputados votes on the decree',b:{es:'Sesión especial a las 14:00. Hacen falta 129. Los bloques que convocan tienen 119.',en:'Special session at 14:00. 129 needed. The sponsoring blocs have 119.'},src:'https://lapostadiario.com/la-oposicion-va-por-el-mega-dnu-de-javier-milei-fijan-sesion-clave-en-diputados-para-el-15-de-octubre/',future:true}
+];
+const TRACKS={land:{es:'Tierra',en:'Land'},ley:{es:'Ley nueva',en:'New law'},rigi:{es:'RIGI',en:'RIGI'},super:{es:'Súper RIGI',en:'Súper RIGI'},glac:{es:'Glaciares',en:'Glaciers'}};
+const LIMITS=[
+ {es:'Tope del 15 % de tierra rural extranjera',en:'15% cap on foreign rural land'},
+ {es:'Subtope del 30 % por nacionalidad',en:'30% sub-cap per nationality'},
+ {es:'Máximo de 1.000 ha por titular',en:'1,000 ha maximum per holder'},
+ {es:'Prohibición sobre grandes cuerpos de agua',en:'Ban on land with large water bodies'},
+ {es:'Certificado del Registro',en:'Registry certificate',reg:true}
+];
+function limitState(d,reg){if(d<'2011-12-22')return 'off';if(d<'2023-12-21')return 'on';if(d<'2024-01-29')return 'off';if(d<'2026-09-29')return 'on';return reg?'unk':'off'}
+const ORGS=[
+ {n:'Observatorio de Tierras (UBA, MILPA)',k:'obs',es:'Mapa por departamento e informes mensuales. Convoca voluntarios y recibe reportes de conflictos.',en:'Department map and monthly reports. Calls for volunteers and takes conflict reports.',u:'https://www.observatoriodetierras.ar/'},
+ {n:'Observatorio del RIGI (UNSAM, FARN, CELS, TNI, ETFE, CEPPAS)',k:'obs',es:'Mapa de proyectos RIGI con fichas de conflicto y boletín anual.',en:'Map of RIGI projects with conflict cards and an annual bulletin.',u:'https://observatoriorigi.org/'},
+ {n:'OPSur, Observatorio Petrolero Sur',k:'obs',es:'Desde 2008. Atlas Ambiental de Vaca Muerta y conteo de incidentes.',en:'Since 2008. Vaca Muerta Environmental Atlas and incident counts.',u:'https://opsur.org.ar/'},
+ {n:'Monitor RIGI (UBA)',k:'obs',es:'Datos abiertos de proyectos RIGI.',en:'Open data on RIGI projects.',u:'https://monitor-rigi-desip-iiep.github.io/RIGI/'},
+ {n:'FARN',k:'legal',es:'Lleva el amparo colectivo por Glaciares con AAdeAA y Greenpeace. Adhesiones abiertas.',en:'Leads the collective injunction on Glaciers with AAdeAA and Greenpeace. Adhesions open.',u:'https://farn.org.ar/'},
+ {n:'AAdeAA, Abogados Ambientalistas',k:'legal',es:'Redactó «El Senado de remate» con 25 organizaciones más.',en:'Wrote "Senate for sale" with 25 other organisations.',u:'https://aadeaa.org/'},
+ {n:'CELS',k:'legal',es:'Centro de Estudios Legales y Sociales. Parte del Observatorio del RIGI.',en:'Centre for Legal and Social Studies. Part of the RIGI Observatory.',u:'https://www.cels.org.ar/'},
+ {n:'CECIM La Plata',k:'legal',es:'Ex combatientes de Malvinas. Demandaron contra el artículo 154 y perdieron por legitimación, no por el fondo.',en:'Malvinas veterans. Sued against article 154 and lost on standing, not on the merits.',u:''},
+ {n:'Greenpeace Argentina',k:'act',es:'Campañas por glaciares, bosques y contra la exploración offshore.',en:'Campaigns on glaciers, forests and against offshore exploration.',u:'https://www.greenpeace.org/argentina/'},
+ {n:'Federación Agraria Argentina',k:'act',es:'Rechazó la reforma de la Ley de Tierras en agosto de 2026.',en:'Rejected the Land Law reform in August 2026.',u:''},
+ {n:'Asamblea Jáchal No Se Toca',k:'terr',es:'San Juan. Contra Barrick por los derrames de Veladero desde 2015.',en:'San Juan. Against Barrick over the Veladero spills since 2015.',u:''},
+ {n:'Asambleas por el agua de Mendoza',k:'terr',es:'Defensa de la Ley 7722 contra la minería con cianuro.',en:'Defence of Law 7722 against cyanide mining.',u:''},
+ {n:'Asambleas de Jujuy y Catamarca',k:'terr',es:'Litio en Salinas Grandes; Andalgalá contra Agua Rica.',en:'Lithium at Salinas Grandes; Andalgalá against Agua Rica.',u:''},
+ {n:'Atlanticazo',k:'terr',es:'Mar del Plata y la costa, contra la exploración offshore.',en:'Mar del Plata and the coast, against offshore exploration.',u:''},
+ {n:'Agencia Tierra Viva',k:'media',es:'Cobertura permanente de conflictos territoriales.',en:'Ongoing coverage of territorial conflicts.',u:'https://agenciatierraviva.com.ar/'},
+ {n:'Chequeado',k:'media',es:'Chequeos y explicadores con fuentes.',en:'Fact-checks and explainers with sources.',u:'https://chequeado.com/'},
+ {n:'¿Cómo Votó?',k:'media',es:'Quién votó qué en el Congreso, con foto.',en:'Who voted what in Congress, with photos.',u:'https://comovoto.dev.ar/'}
+];
+const KIND={obs:{es:'Observatorio',en:'Observatory'},legal:{es:'Legal',en:'Legal'},act:{es:'Activismo',en:'Activism'},terr:{es:'Territorio',en:'Territory'},media:{es:'Información',en:'Information'}};
+const LANES=[
+ {es:'Legal',en:'Legal',s:{es:'amparos con legitimación, pedidos de acceso a la información',en:'injunctions with standing, access-to-information requests'},to:[1]},
+ {es:'Activismo',en:'Activism',s:{es:'asambleas, movilización el 15 de octubre, difundir el chequeo',en:'assemblies, mobilising on 15 October, sharing the fact-check'},to:[0,2]},
+ {es:'Trabajo social',en:'Social work',s:{es:'documentar conflictos, acompañar comunidades',en:'documenting conflicts, accompanying communities'},to:[2]},
+ {es:'Partidos',en:'Parties',s:{es:'129 votos en Diputados; faltan unos 10',en:'129 votes in Diputados; about 10 missing'},to:[0]},
+ {es:'Vecinos',en:'Residents',s:{es:'preguntar en el municipio, mirar el mapa, ir a la asamblea',en:'ask at the municipality, check the map, go to the assembly'},to:[1,2]}
+];
+const OUTS=[{es:'Congreso',en:'Congress'},{es:'Tribunales',en:'Courts'},{es:'Territorio',en:'Territory'}];
+const BLOCS=[{n:'Unión por la Patria',v:93,s:true},{n:'Provincias Unidas',v:18,s:true},{n:'Coalición Cívica',v:2,s:true},{n:'Encuentro Federal',v:2,s:true},{n:'Izquierda (FIT-U)',v:4,s:true},{n:'Argentina Federal',v:9},{n:'UCR',v:6},{n:'PRO',v:12},{n:'Otros',v:16},{n:'La Libertad Avanza',v:95,g:true}];
+
+/* ---------- DECK ---------- */
+const panels=[...document.querySelectorAll('.panel')];
+let cur=0;
+function go(d){show(cur+d)}
+function show(i){cur=Math.max(0,Math.min(panels.length-1,i));panels.forEach((p,k)=>p.classList.toggle('cur',k===cur));window.scrollTo({top:0});try{history.replaceState(null,'','#'+panels[cur].id)}catch(e){}deckUI();revealNow();try{document.title='Tierra en Venta · '+T(panels[cur].dataset.es,panels[cur].dataset.en);const hh=panels[cur].querySelector('h1,h2');if(hh){hh.setAttribute('tabindex','-1');hh.focus({preventScroll:true})}}catch(e){}}
+function deckUI(){
+  const p=panels[cur];
+  document.getElementById('prog').style.width=((cur+1)/panels.length*100)+'%';
+  document.getElementById('pos').textContent=`${String(cur+1).padStart(2,'0')} / ${String(panels.length).padStart(2,'0')} · ${T(p.dataset.es,p.dataset.en)}`;
+  document.getElementById('nav-prev').disabled=cur===0;
+  document.getElementById('nav-next').disabled=cur===panels.length-1;
+  document.getElementById('index-list').innerHTML=panels.map((x,i)=>`<li><button class="${i===cur?'cur':''}" onclick="show(${i});toggleIndex()"><span class="i">${String(i+1).padStart(2,'0')}</span>${esc(T(x.dataset.es,x.dataset.en))}</button></li>`).join('');
+  const onTl=p.id==='etapa'; document.getElementById('minitl').hidden=!onTl; document.getElementById('ticker').hidden=onTl;
+  fitRail();
+}
+function fitRail(){const r=document.querySelector('.rail');site.style.paddingTop=(r.offsetHeight+14)+'px'}
+window.addEventListener('resize',fitRail);
+window.addEventListener('hashchange',()=>{const i=panels.findIndex(p=>p.id===(location.hash||'').replace('#',''));if(i>=0&&i!==cur)show(i)});
+function toggleIndex(){const ix=document.getElementById('index');ix.hidden=!ix.hidden}
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.rowsel,.clk')){e.preventDefault();e.target.dispatchEvent(new MouseEvent('click',{bubbles:true}));return}const tag=(e.target.tagName||'').toLowerCase();if(tag==='input'||tag==='textarea'||tag==='select')return;if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1);else if(e.key==='Escape')document.getElementById('index').hidden=true});
+const io=('IntersectionObserver' in window)?new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'}):null;
+function revealNow(){document.querySelectorAll('.panel.cur .rv:not(.in)').forEach(el=>{if(io)io.observe(el);else el.classList.add('in')});setTimeout(()=>document.querySelectorAll('.panel.cur .rv:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight)el.classList.add('in')}),300);setTimeout(()=>document.querySelectorAll('.panel.cur .rv').forEach(el=>el.classList.add('in')),4000)}
+function daysTo(iso){const t=new Date(iso+'T00:00:00');const n=new Date();n.setHours(0,0,0,0);return Math.round((t-n)/864e5)}
+function renderCountdown(){
+  const d=daysTo(SESSION), big=document.getElementById('cd-days'), tx=document.getElementById('cd-text'), tk=document.getElementById('ticker');
+  if(d>0){big.textContent=d;tx.innerHTML=`<b>${T('días para la sesión en Diputados','days to the Diputados session')}</b><br>${T('Jueves 15 de octubre, 14:00. Se vota rechazar el DNU 70/2023. Hacen falta 129; los bloques que convocan suman 119.','Thursday 15 October, 14:00. The vote is to reject Decree 70/2023. 129 needed; the sponsoring blocs hold 119.')}`;
+    tk.textContent=`▲ ${d} ${T('días','days')} · 119/129 · ${T('Diputados 15 oct','Diputados 15 Oct')}`}
+  else if(d===0){big.textContent='●';tx.innerHTML=`<b>${T('Hoy se vota','The vote is today')}</b><br>${T('Diputados, 14:00.','Diputados, 14:00.')}`;tk.textContent=`● ${T('HOY','TODAY')} · ${T('Diputados, 14:00','Diputados, 14:00')}`}
+  else{big.textContent='–';tx.innerHTML=`<b>${T('La sesión del 15 de octubre ya pasó','The 15 October session has passed')}</b><br>${T('Esta página necesita actualización.','This page needs an update.')}`;tk.textContent=`${T('ACTUALIZACIÓN PENDIENTE','UPDATE PENDING')} · ${T('última revisión','last checked')} ${CHECKED}`}
+}
+
+/* ---------- RENDER ---------- */
+let D=null; const RENDER_ERRORS=[];
+function render(){
+  const stc={on:'st-on',off:'st-off',law:'st-law',hold:'st-hold'};
+  document.getElementById('board').innerHTML=BOARD.map(b=>`<div class="card rv"><div class="st"><h3>${esc(T(b.es,b.en))}</h3><span class="state ${stc[b.state]}">${esc(T(b.st.es,b.st.en))}</span></div><div class="sub">${esc(b.sub)}</div><div><span class="mono" style="font-size:.78rem;color:var(--fg);font-weight:600">${esc(b.next.d==='sin fecha'?T('sin fecha','no date'):b.next.d)}</span> · ${esc(T(b.next.es,b.next.en))}</div><details class="fold quiet"><summary>${T('Qué pasó antes','What happened before')}</summary><div class="body small"><span class="mono" style="font-size:.78rem;color:var(--accent);font-weight:600">${esc(b.last.d)}</span> · ${esc(T(b.last.es,b.last.en))}<div class="checked" style="margin-top:6px">${T('Revisado','Checked')} ${CHECKED} · <a class="src" href="${b.src}" target="_blank" rel="noopener">${T('fuente','source')}</a></div></div></details></div>`).join('');
+  document.getElementById('vtl').innerHTML=EVENTS.map((e,i)=>`<div class="ev rv" data-i="${i}"><div class="box"><div class="d">${e.d}${e.future?' · '+T('próximo','upcoming'):''}</div><div class="t">${esc(T(e.es,e.en))}</div><span class="tag ${e.t}">${esc(T(TRACKS[e.t].es,TRACKS[e.t].en))}</span><p style="margin:8px 0 0">${esc(T(e.b.es,e.b.en))} <a class="src" href="${e.src}" target="_blank" rel="noopener">${T('fuente','source')}</a></p></div></div>`).join('');
+  document.getElementById('mt-track').innerHTML=EVENTS.map((e,i)=>`<i style="left:${(tlx(e.d)*100).toFixed(1)}%" data-i="${i}"></i>`).join('');
+  document.getElementById('orgs').innerHTML=ORGS.map(o=>`<div class="org"><span class="tag">${esc(T(KIND[o.k].es,KIND[o.k].en))}</span><b>${esc(o.n)}</b>${esc(T(o.es,o.en))} ${o.u?`<a class="src" href="${o.u}" target="_blank" rel="noopener">${T('sitio','site')}</a>`:''}</div>`).join('');
+  renderLanes(); renderCountdown(); chartBlocs(); chartSwitch(); deckUI(); renderBgMap();
+  if(D){[['ch-laws',chartLaws],['ch-hect',chartHect],['ch-land',chartLand],['ch-certs',chartCerts],['ch-deps',chartDeps],['ch-nat',chartNat],['ch-sector',chartSector],['votes',renderVotes],['map1',renderMap],['cflist',renderConflicts]].forEach(([id,fn])=>{try{fn()}catch(e){RENDER_ERRORS.push(id+': '+(e&&e.message||e));const el=document.getElementById(id);if(el)el.innerHTML=`<p class="small muted">${T('Este bloque no pudo dibujarse','This block could not be drawn')} (${esc(id)}: ${esc(e&&e.message||e)}).</p>`}});if(RENDER_ERRORS.length)console.error('render errors',RENDER_ERRORS)}
+  relabel(); revealNow(); watchTimeline();
+  try{const sw=document.getElementById('ch-switch');if(sw&&sw.scrollWidth>sw.clientWidth)sw.scrollLeft=sw.scrollWidth}catch(e){}
+}
+const T0=Date.parse('2011-06-01'), T1=Date.parse('2026-12-31');
+function tlx(d){return (Date.parse(d)-T0)/(T1-T0)}
+let tlObs=null;
+function watchTimeline(){
+  if(tlObs)tlObs.disconnect();
+  const evs=[...document.querySelectorAll('#vtl .ev')]; if(!evs.length)return;
+  const setCur=i=>{evs.forEach((x,k)=>x.classList.toggle('cur',k===i));document.querySelectorAll('#mt-track i').forEach((x,k)=>{x.classList.toggle('cur',k===i);x.classList.toggle('done',k<i)});const e=EVENTS[i];document.getElementById('mt-cur').textContent=e.d+' · '+T(e.es,e.en)};
+  setCur(0);
+  if(!('IntersectionObserver' in window))return;
+  tlObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)setCur(+e.target.dataset.i)})},{rootMargin:'-35% 0px -55% 0px'});
+  evs.forEach(x=>tlObs.observe(x));
+}
+function wrap(t,n){const w=t.split(' '),out=[];let c='';w.forEach(x=>{if((c+' '+x).trim().length>n){out.push(c.trim());c=x}else c+=' '+x});if(c.trim())out.push(c.trim());return out.slice(0,4)}
+function fig(id,headline,howto,svg,extra,links,caveat){document.getElementById(id).innerHTML=`<figcaption class="top"><b>${esc(headline)}</b><span class="howto">${esc(howto)}</span></figcaption>${svg}${extra||''}<details class="fold quiet info"><summary>ⓘ ${T('Fuentes y lo que no muestra','Sources and what it does not show')}</summary><div class="body"><figcaption>${caveat?`<span class="caveat">${esc(caveat)}</span> `:''}${links.map(l=>`<a class="src" href="${l[1]}" target="_blank" rel="noopener">${esc(l[0])}</a>`).join(' ')}</figcaption></div></details>`}
+
+/* Diputados as a hemicycle: one dot = one deputy */
+function chartBlocs(){
+  const seats=[]; BLOCS.forEach(b=>{for(let i=0;i<b.v;i++)seats.push(b)});
+  const rows=[36,44,52,60,65], R0=120, dr=34, cx=300, cy=300, pts=[];
+  rows.forEach((n,ri)=>{const r=R0+ri*dr;for(let i=0;i<n;i++){const a=Math.PI*(1-i/(n-1));pts.push({x:cx+r*Math.cos(a),y:cy-r*Math.sin(a),a})}});
+  pts.sort((p,q)=>q.a-p.a); // left to right
+  let s=`<svg viewBox="0 0 600 330" role="img" aria-label="${esc(T('Hemiciclo de Diputados','Diputados hemicycle'))}">`;
+  seats.forEach((b,i)=>{const p=pts[i];if(!p)return;const col=b.s?css('--fg'):(b.g?css('--fg-3'):css('--hold'));s+=`<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="6.2" fill="${col}" data-tip="${esc(b.n)}"/>`});
+  const a129=Math.PI*(1-128/256), ex=cx+(R0+dr*4+22)*Math.cos(a129), ey=cy-(R0+dr*4+22)*Math.sin(a129);
+  s+=`<line x1="${cx+(R0-16)*Math.cos(a129)}" y1="${cy-(R0-16)*Math.sin(a129)}" x2="${ex}" y2="${ey}" stroke="${css('--fg')}" stroke-width="2"/>`;
+  s+=`<text class="ttl" x="${ex+6}" y="${ey-4}" style="font-size:12px">129 = ${T('mayoría','majority')}</text>`;
+  s+=`<text class="val" x="${cx}" y="${cy-4}" text-anchor="middle" style="font-size:30px;font-family:var(--display);font-weight:900">${T('faltan 10','10 short')}</text>`;
+  s+=`<text class="lbl" x="${cx}" y="${cy+16}" text-anchor="middle">119 ${T('convocan','sponsor')} · 129 ${T('necesarios','needed')} · 257 ${T('bancas','seats')}</text></svg>`;
+  const leg=`<div class="legend"><span><i style="background:${css('--fg')};border-radius:50%"></i>${T('Convocan la sesión: 119','Sponsor the session: 119')}</span><span><i style="background:${css('--hold')};border-radius:50%"></i>${T('Pueden definirla: Argentina Federal 9, UCR 6, PRO 12, otros 16','Can decide it: Argentina Federal 9, UCR 6, PRO 12, others 16')}</span><span><i style="background:${css('--fg-3')};border-radius:50%"></i>La Libertad Avanza 95</span></div>`;
+  fig('ch-blocs',T('Faltan 10 diputados para rechazar el decreto','10 deputies short of rejecting the decree'),T('Cada punto es una banca. La línea marca 129, la mayoría absoluta. Los puntos más fuertes ya convocaron la sesión; los amarillos deciden; los grises son del oficialismo.','Each dot is one seat. The line marks 129, the absolute majority. The strongest dots already called the session; yellow decides; grey is the governing bloc.'),s,leg,[['HCDN, composición oficial','https://datos.hcdn.gob.ar/dataset/b238e6ab-691a-4e64-91d9-1445c4506ef4'],['Perfil','https://www.perfil.com/noticias/politica/la-oposicion-busca-forzar-en-diputados-el-rechazo-al-dnu-70-y-el-peronismo-apunta-al-articulo-154.phtml']],T('No muestra: quién faltará ese día. La prensa cuenta entre 16 y 20 faltantes según a quién incluya.','Does not show: who will be absent that day. Press counts 16 to 20 missing depending on who is included.'));
+}
+
+/* 5 of every 100 hectares, with the Santa Fe comparison drawn */
+function chartHect(){
+  const W=560,H=250,cell=19,gap=3,gx=10,gy=20;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(T('5 de cada 100 hectáreas','5 of every 100 hectares'))}">`;
+  for(let i=0;i<100;i++){const c=i%10,r=Math.floor(i/10);const x=gx+c*(cell+gap),y=gy+r*(cell+gap);const f=i<5?css('--alarm'):(i<15?css('--surface-2'):css('--surface-2'));s+=`<rect x="${x}" y="${y}" width="${cell}" height="${cell}" rx="3" fill="${f}" ${i>=5&&i<15?`stroke="${css('--fg-2')}" stroke-dasharray="3 2"`:`stroke="${css('--line')}"`} data-tip="${esc(i<5?T('1 cuadrado = 1 % de la tierra rural, ya extranjera','1 square = 1% of rural land, already foreign'):i<15?T('hasta acá llegaba el tope legal (15 %)','the legal cap reached here (15%)'):T('1 % de la tierra rural','1% of rural land'))}"/>`}
+  const tx=gx+10*(cell+gap)+18;
+  s+=`<text class="val" x="${tx}" y="${gy+14}" style="font-size:13px">${T('5 cuadrados naranjas = 13,3 M ha','5 orange squares = 13.3 M ha')}</text>`;
+  s+=`<text class="lbl" x="${tx}" y="${gy+32}">${T('en manos extranjeras, agosto 2026','in foreign hands, August 2026')}</text>`;
+  s+=`<text class="val" x="${tx}" y="${gy+62}" style="font-size:13px">${T('10 punteados = lo que la ley de 2011','10 dashed = what the 2011 law')}</text><text class="lbl" x="${tx}" y="${gy+78}">${T('todavía permitía comprar, hasta el 15 %','still allowed to buy, up to 15%')}</text>`;
+  s+=`<text class="val" x="${tx}" y="${gy+108}" style="font-size:13px">${T('Hoy no hay tope.','Today there is no cap.')}</text>`;
+  // mini map with Santa Fe
+  const mx=tx, my=gy+122, sc=0.052;
+  s+=`<g transform="translate(${mx},${my}) scale(${sc})">${D.prov.filter(p=>p.id!=='malvinas').map(p=>`<path d="${p.d}" fill="${p.id==='santa-fe'?css('--fg-2'):css('--surface-2')}" stroke="${css('--fg-3')}" stroke-width="6"/>`).join('')}</g>`;
+  s+=`<text class="lbl" x="${mx+62}" y="${my+40}">${T('Las 13,3 M ha extranjeras son más que','The 13.3 M foreign ha are more than')}</text><text class="lbl" x="${mx+62}" y="${my+56}">${T('toda la tierra rural de Santa Fe','all the rural land of Santa Fe')}</text><text class="lbl" x="${mx+62}" y="${my+72}">(12,8 M ha, ${T('en gris','in grey')}).</text>`;
+  s+='</svg>';
+  fig('ch-hect',T('5 de cada 100 hectáreas rurales ya son extranjeras','5 of every 100 rural hectares are already foreign-held'),T('Cada cuadrado es el 1 % de la tierra rural del país (266,6 M ha). Los punteados marcan hasta dónde llegaba el tope de la ley derogada.','Each square is 1% of the country\'s rural land (266.6 M ha). The dashed ones mark how far the repealed law\'s cap reached.'),s,'',[['RNTR, agosto 2025','https://www.argentina.gob.ar/justicia/tierrasrurales/datos/extranjerizacion-departamento'],['Chequeado','https://chequeado.com/el-explicador/tierras-en-manos-extranjeras-aumentaron-mas-de-un-6-desde-2018-y-31-departamentos-superan-el-limite-legal/']],T('No muestra: dónde está esa tierra. Eso está en el mapa, pantalla 06.','Does not show: where that land is. That is on the map, screen 06.'));
+}
+
+/* hectares over time: two segments, break named, change annotated */
+function chartCerts(){
+  const years=[];for(let y=2012;y<=2026;y++)years.push(y);
+  const have={2024:35,2025:29,2026:47}, est={2016:98,2017:74}; const W=560,cell=7,gap=2,colW=(W-60)/years.length,rowsMax=Math.ceil(98/3);
+  const H=40+rowsMax*(cell+gap)+40;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(T('Certificados por año','Certificates per year'))}"><defs><pattern id="hatch2" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="${css('--fg-3')}" stroke-width="1" opacity=".45"/></pattern></defs>`;
+  years.forEach((yr,i)=>{const x0=30+i*colW, base=H-36;
+    s+=`<text class="lbl" x="${x0+colW/2}" y="${H-18}" text-anchor="middle" style="font-size:9.5px">${String(yr).slice(2)}</text>`;
+    if(have[yr]!=null){const n=have[yr];for(let k=0;k<n;k++){const c=k%3,r=Math.floor(k/3);s+=`<rect x="${(x0+colW/2-14+c*(cell+gap)).toFixed(1)}" y="${(base-(r+1)*(cell+gap)).toFixed(1)}" width="${cell}" height="${cell}" rx="3.5" fill="${css('--alarm')}"/>`}
+      s+=`<text class="val" x="${x0+colW/2}" y="${(base-Math.ceil(n/3)*(cell+gap)-6).toFixed(1)}" text-anchor="middle">${n}${yr===2026?'*':''}</text>`}
+    else if(est[yr]){const n=est[yr];for(let k=0;k<n;k++){const c=k%3,r=Math.floor(k/3);s+=`<rect x="${(x0+colW/2-14+c*(cell+gap)).toFixed(1)}" y="${(base-(r+1)*(cell+gap)).toFixed(1)}" width="${cell}" height="${cell}" rx="3.5" fill="${css('--fg-3')}" opacity=".5" data-tip="${esc(T('172 certificados entre enero de 2016 y septiembre de 2017, repartidos a prorrata: 98 y 74','172 certificates from January 2016 to September 2017, prorated: 98 and 74'))}"/>`}
+      s+=`<text class="val" x="${x0+colW/2}" y="${(base-Math.ceil(n/3)*(cell+gap)-6).toFixed(1)}" text-anchor="middle" style="fill:var(--fg-2)">≈${n}</text>`}
+    else{s+=`<rect x="${x0+colW/2-14}" y="${base-rowsMax*(cell+gap)}" width="${3*(cell+gap)-gap}" height="${rowsMax*(cell+gap)}" rx="2" fill="url(#hatch2)" data-tip="${esc(T('sin dato publicado','no published figure'))}"/>`}});
+  s+='</svg>';
+  const legc=`<div class="legend"><span><i style="background:${css('--alarm')};border-radius:50%"></i>1 ${T('punto','dot')} = 1 ${T('compra autorizada','authorised purchase')}</span><span><i style="background:${css('--fg-3')};opacity:.5"></i>${T('2016-17: 172 en 21 meses, repartidos a prorrata','2016-17: 172 in 21 months, prorated')}</span><span><i style="background:repeating-linear-gradient(45deg,${css('--fg-3')} 0 1px,transparent 1px 4px)"></i>${T('nadie publicó el dato','no published figure')}</span><span>* 2026 ${T('hasta agosto','to August')}</span></div>`;
+  fig('ch-certs',T('111 compras extranjeras autorizadas bajo Milei, y diez años sin datos','111 foreign purchases authorised under Milei, and ten years without data'),T('Cada punto naranja es un certificado del Registro: una compra de tierra rural por un extranjero. Donde hay rayas, el Estado no publicó la cifra.','Each orange dot is one Registry certificate: one rural land purchase by a foreigner. Where it is hatched, the State published no figure.'),s,legc,[['Chequeado','https://chequeado.com/el-explicador/ley-de-tierras-en-la-gestion-de-javier-milei-se-autorizaron-111-operaciones-de-compra-por-parte-de-extranjeros/']],T('No muestra: hectáreas por compra. Y 2025 tiene dos cifras oficiales que no coinciden (29 según Justicia; 48 solo de enero a mayo según Jefatura de Gabinete).','Does not show: hectares per purchase. And 2025 has two official figures that disagree (29 per Justice; 48 for January to May alone per the Cabinet Office).'));
+}
+
+/* nationality: lollipops, share annotated */
+function chartNat(){
+  const cut=(D.nationality&&D.nationality.cuts||[]).find(c=>String(c.cut_date||'').startsWith('2022'));
+  if(!cut){document.getElementById('ch-nat').innerHTML='';return}
+  const NAME={'United States':{es:'Estados Unidos',en:'United States'},'Italy':{es:'Italia',en:'Italy'},'Spain':{es:'España',en:'Spain'},'Switzerland':{es:'Suiza',en:'Switzerland'},'Chile':{es:'Chile',en:'Chile'},'Uruguay':{es:'Uruguay',en:'Uruguay'},'Canada':{es:'Canadá',en:'Canada'},'France':{es:'Francia',en:'France'},'Netherlands':{es:'Países Bajos',en:'Netherlands'},'Germany':{es:'Alemania',en:'Germany'},'United Kingdom':{es:'Reino Unido',en:'United Kingdom'},'Belgium':{es:'Bélgica',en:'Belgium'},'Brazil':{es:'Brasil',en:'Brazil'},'Luxembourg':{es:'Luxemburgo',en:'Luxembourg'}};
+  const rows=cut.rows.slice().sort((a,b)=>b.ha-a.ha); const sum=rows.reduce((a,r)=>a+r.ha,0); const total=14.7e6; const rest=total-sum;
+  const all=rows.map(r=>({n:NAME[r.country]?T(NAME[r.country].es,NAME[r.country].en):r.country,ha:r.ha,c:r.country==='United States'?css('--alarm'):css('--accent')})).concat([{n:T('otras, no detalladas','others, not itemised'),ha:rest,c:css('--fg-3'),dash:true}]);
+  const W=560,rowH=24,H=28+all.length*rowH,l=130,r=150,maxv=all[0].ha;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(T('Por nacionalidad','By nationality'))}">`;
+  all.forEach((x,i)=>{const yy=16+i*rowH,w=(W-l-r)*x.ha/maxv;s+=`<text class="ttl" x="${l-10}" y="${yy+4}" text-anchor="end" style="font-size:10.5px;${x.dash?'font-weight:400':''}">${esc(x.n)}</text><line x1="${l}" y1="${yy}" x2="${l+w}" y2="${yy}" stroke="${x.c}" stroke-width="3" ${x.dash?'stroke-dasharray="4 3"':''}/><circle cx="${l+w}" cy="${yy}" r="5" fill="${x.c}" data-tip="${esc(x.n+': '+fmt(Math.round(x.ha))+' ha')}"/><text class="val" x="${l+w+10}" y="${yy+4}" style="font-size:11px">${dec(x.ha/1e6,2)} M ha</text>`});
+  s+='</svg>';
+  fig('ch-nat',T('Catorce nacionalidades suman 11,1 millones de hectáreas; una de cada cuatro es estadounidense','Fourteen nationalities add up to 11.1 million hectares; one in four is US-held'),T('Hectáreas rurales por nacionalidad del titular, tabla oficial del Registro de abril de 2022, la última que detalla país por país. Punteado: lo que el Registro no desglosó, contra el total de 14,7 M que citó la prensa para ese corte.','Rural hectares by holder nationality, the Registry\'s official table of April 2022, the last one itemised country by country. Dashed: what the Registry did not itemise, against the 14.7 M total the press cited for that cut.'),s,'',[['RNTR, abril 2022 (archivo)','https://web.archive.org/web/20220810200503/https://www.argentina.gob.ar/justicia/tierrasrurales/datos/distribucion-nacionalidad'],['Agencia Tierra Viva','https://agenciatierraviva.com.ar/decreto-de-milei-todo-para-el-sector-privado-mas-extranjerizacion-de-tierras-y-via-libre-para-quemar-bosques-y-humedales/'],['Observatorio de Tierras','https://www.observatoriodetierras.ar/']],T('No muestra: quién está detrás de una sociedad, ni los cambios desde 2022. Para 2025 solo hay cifras redondeadas de tres países (EE. UU. 2,7 M, Italia 2,0 M, España 1,7 M) y ninguna tabla oficial.','Does not show: who sits behind a company, or changes since 2022. For 2025 there are only rounded figures for three countries (US 2.7 M, Italy 2.0 M, Spain 1.7 M) and no official table.'));
+}
+function chartSector(){
+  const rows=[{l:T('Minería','Mining'),n:31,c:css('--s1')},{l:T('Petróleo y gas','Oil and gas'),n:17,c:css('--s3')},{l:T('Otros','Other'),n:2,c:css('--fg-3')}];
+  const W=560,H=120,cell=18,gap=3; let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="RIGI">`,k=0;
+  rows.forEach(r=>{for(let i=0;i<r.n;i++){const c=k%25,rr=Math.floor(k/25);s+=`<rect x="${10+c*(cell+gap)}" y="${16+rr*(cell+gap)}" width="${cell}" height="${cell}" rx="3" fill="${r.c}" data-tip="${esc(r.l+' · USD 1.000 M')}"/>`;k++}});
+  s+=`<text class="lbl" x="10" y="${16+2*(cell+gap)+22}">${T('1 cuadrado = USD 1.000 millones comprometidos · 50 cuadrados = USD 49.766 M','1 square = USD 1,000 million committed · 50 squares = USD 49,766 M')}</text></svg>`;
+  const leg=`<div class="legend"><span><i style="background:${css('--s1')}"></i>${T('Minería 31 (62,7 %)','Mining 31 (62.7%)')}</span><span><i style="background:${css('--s3')}"></i>${T('Petróleo y gas 17 (33,7 %)','Oil and gas 17 (33.7%)')}</span><span><i style="background:${css('--fg-3')}"></i>${T('Otros 2 (3,6 %)','Other 2 (3.6%)')}</span></div>`;
+  fig('ch-sector',T('96 de cada 100 dólares del RIGI van a minería y petróleo','96 of every 100 RIGI dollars go to mining and oil'),T('Cada cuadrado son mil millones de dólares comprometidos en los 23 proyectos aprobados.','Each square is one billion dollars committed in the 23 approved projects.'),s,leg,[['Monitor RIGI','https://monitor-rigi-desip-iiep.github.io/RIGI/'],['Perfil','https://www.perfil.com/noticias/economia/todas-las-inversiones-que-comprende-el-rigi-por-un-total-del-casi-us-50000-millones-a40.phtml']],T('No muestra: cuánto de eso ya se invirtió. Es inversión comprometida, no ejecutada.','Does not show: how much has been invested yet. It is committed, not executed, investment.'));
+}
+
+/* departments sorted strip with legal thresholds */
+const VOTE_ORDER=['diputados-2026-06-24-super-rigi','senado-2024-03-14-dnu70-rechazo','senado-2026-08-06-inviolabilidad-propiedad-privada','diputados-2026-04-09-glaciares','senado-2026-02-26-glaciares','diputados-2024-06-28-ley-bases-sancion-final','diputados-2024-04-30-ley-bases-general'];
+const VOTE_T={'diputados-2026-06-24-super-rigi':{es:'Súper RIGI, media sanción · Diputados · 2026-06-24',en:'Súper RIGI, half-sanction · Diputados · 2026-06-24',n:{es:'Afirmativo es a favor del Súper RIGI.',en:'Yes means in favour of the Súper RIGI.'}},
+ 'senado-2024-03-14-dnu70-rechazo':{es:'DNU 70/2023 · Senado · 2024-03-14',en:'Decree 70/2023 · Senate · 2024-03-14',n:{es:'Atención: acá «afirmativo» es mantener el decreto y «negativo» es rechazarlo. Ganó el rechazo, 42 a 25.',en:'Note: here "yes" means keep the decree and "no" means reject it. Rejection won, 42 to 25.'}},
+ 'senado-2026-08-06-inviolabilidad-propiedad-privada':{es:'Ley de propiedad privada, sin el capítulo de tierras · Senado · 2026-08-06',en:'Private property law, without the land chapter · Senate · 2026-08-06',n:{es:'37 a 33. El capítulo de tierras se había retirado el día anterior.',en:'37 to 33. The land chapter had been withdrawn the day before.'}},
+ 'diputados-2026-04-09-glaciares':{es:'Reforma de Glaciares · Diputados · 2026-04-08',en:'Glaciers reform · Diputados · 2026-04-08',n:{es:'137 a 111. Afirmativo es a favor de abrir zonas periglaciares.',en:'137 to 111. Yes means in favour of opening periglacial zones.'}},
+ 'senado-2026-02-26-glaciares':{es:'Reforma de Glaciares · Senado · 2026-02-26',en:'Glaciers reform · Senate · 2026-02-26',n:{es:'40 a 31.',en:'40 to 31.'}},
+ 'diputados-2024-06-28-ley-bases-sancion-final':{es:'Ley Bases con el RIGI, sanción final · Diputados · 2024-06-28',en:'Ley Bases with the RIGI, final sanction · Diputados · 2024-06-28',n:{es:'147 a 107.',en:'147 to 107.'}},
+ 'diputados-2024-04-30-ley-bases-general':{es:'Ley Bases, en general · Diputados · 2024-04-30',en:'Ley Bases, in general · Diputados · 2024-04-30',n:{es:'142 a 106.',en:'142 to 106.'}}};
+const VC={AFIRMATIVO:'A',NEGATIVO:'N',ABSTENCION:'B',AUSENTE:'U'};
+/* v0.7.1 votes: one fixed layout per chamber; selecting a roll call only recolours the dots; a side chart sums every bloc's votes across the roll calls */
+const CHAMBERS=[{id:'dip',es:'Diputados',en:'Deputies',rolls:['diputados-2024-04-30-ley-bases-general','diputados-2024-06-28-ley-bases-sancion-final','diputados-2026-04-09-glaciares','diputados-2026-06-24-super-rigi']},
+ {id:'sen',es:'Senado',en:'Senate',rolls:['senado-2024-03-14-dnu70-rechazo','senado-2026-02-26-glaciares','senado-2026-08-06-inviolabilidad-propiedad-privada']}];
+const ROLL_SHORT={'diputados-2024-04-30-ley-bases-general':{es:'Ley Bases, en general · 2024-04-30',en:'Ley Bases, general · 2024-04-30'},'diputados-2024-06-28-ley-bases-sancion-final':{es:'Ley Bases con RIGI, final · 2024-06-28',en:'Ley Bases with RIGI, final · 2024-06-28'},'diputados-2026-04-09-glaciares':{es:'Glaciares · 2026-04-08',en:'Glaciers · 2026-04-08'},'diputados-2026-06-24-super-rigi':{es:'Súper RIGI · 2026-06-24',en:'Súper RIGI · 2026-06-24'},'senado-2024-03-14-dnu70-rechazo':{es:'DNU 70/2023 · 2024-03-14',en:'Decree 70/2023 · 2024-03-14'},'senado-2026-02-26-glaciares':{es:'Glaciares · 2026-02-26',en:'Glaciers · 2026-02-26'},'senado-2026-08-06-inviolabilidad-propiedad-privada':{es:'Propiedad privada · 2026-08-06',en:'Private property · 2026-08-06'}};
+const VSEL={dip:'diputados-2026-06-24-super-rigi',sen:'senado-2024-03-14-dnu70-rechazo'};
+const CH_CACHE={};
+const normName=s=>String(s||'').toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Z ]+/g,' ').replace(/\s+/g,' ').trim();
+function buildChamber(ch){
+  if(CH_CACHE[ch.id])return CH_CACHE[ch.id];
+  const rolls=ch.rolls.filter(k=>D.votes[k]); const persons={};
+  rolls.forEach((k,ri)=>{D.votes[k].rows.forEach(r=>{const id=normName(r.n);const p=persons[id]||(persons[id]={id,n:r.n,b:r.b,p:r.p,votes:{}});p.b=r.b||p.b;p.n=r.n;p.votes[k]=VC[r.v]||'U'})});
+  const list=Object.values(persons); const by={}; list.forEach(p=>{(by[p.b]=by[p.b]||[]).push(p)});
+  const blocs=Object.keys(by).sort((a,b)=>by[b].length-by[a].length);
+  const P=packBlocs(blocs,by); const pad=30;
+  const W=P.maxx-P.minx+pad*2, H=P.maxy-P.miny+pad*2+10;
+  P.items.forEach(it=>{const cx=it.x-P.minx+pad, cy=it.y-P.miny+pad; it.cx=cx; it.cy=cy;
+    by[it.b].sort((a,c)=>a.n.localeCompare(c.n)).forEach((p,i)=>{const ang=i*2.39996, rad=4.9*Math.sqrt(i+0.5);p.x=cx+rad*Math.cos(ang);p.y=cy+rad*Math.sin(ang)})});
+  const out={rolls,list,by,blocs,P,W,H}; CH_CACHE[ch.id]=out; return out;
+}
+function voteFixedSvg(ch,C){
+  let s=`<svg class="vfix" viewBox="0 0 ${C.W.toFixed(0)} ${C.H.toFixed(0)}" role="img" aria-label="${esc(T(ch.es,ch.en))}">`;
+  C.P.items.forEach((it,bi)=>{s+=`<circle cx="${it.cx.toFixed(1)}" cy="${it.cy.toFixed(1)}" r="${it.r.toFixed(1)}" fill="${css('--surface-2')}" stroke="${css('--line')}" data-tip="${esc(it.b+': '+C.by[it.b].length)}"/>`; if(bi>5)return;
+    const nm=it.b.length>22?it.b.slice(0,21)+'…':it.b; s+=`<text class="lbl" x="${it.cx.toFixed(1)}" y="${(it.cy+it.r+11).toFixed(1)}" text-anchor="middle" style="font-size:9px;font-family:var(--ui)" data-tip="${esc(it.b+': '+C.by[it.b].length)}">${esc(nm)}</text>`});
+  C.list.forEach(p=>{s+=`<circle class="vp" data-id="${esc(p.id)}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.6" fill="${css('--off')}" opacity=".3"/>`});
+  return s+'</svg>';
+}
+function colourVotes(chid){
+  const ch=CHAMBERS.find(c=>c.id===chid), C=buildChamber(ch), k=VSEL[chid]; const col={A:css('--accent'),N:css('--s5'),B:css('--hold'),U:css('--off')};
+  const wrap=document.getElementById('vw-'+chid); if(!wrap)return;
+  const tot={A:0,N:0,B:0,U:0,X:0};
+  C.list.forEach(p=>{const v=p.votes[k]; const el=wrap.querySelector(`.vp[data-id="${CSS.escape(p.id)}"]`); if(!el)return;
+    if(!v){el.setAttribute('fill',css('--off'));el.setAttribute('opacity','.15');el.dataset.tip=p.n+' · '+T('no integraba la Cámara en esta votación','not a member at this vote');tot.X++}
+    else{el.setAttribute('fill',col[v]);el.setAttribute('opacity',v==='U'?'.4':'1');el.dataset.tip=p.n+' · '+(p.p||'')+' · '+{A:T('Afirmativo','Yes'),N:T('Negativo','No'),B:T('Abstención','Abstained'),U:T('Ausente','Absent')}[v];tot[v]++}});
+  wrap.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k));
+  const t=VOTE_T[k]; wrap.querySelector('.vnote').innerHTML=`<b style="font-family:var(--ui)">${esc(T(t.es,t.en))}</b> · ${esc(T(t.n.es,t.n.en))} <a class="src" href="${D.votes[k].source||'https://comovoto.dev.ar/'}" target="_blank" rel="noopener">${T('acta','record')}</a>`;
+  wrap.querySelector('.vleg').innerHTML=`<span><i style="background:${css('--accent')};border-radius:50%"></i>${T('Afirmativo','Yes')} ${tot.A}</span><span><i style="background:${css('--s5')};border-radius:50%"></i>${T('Negativo','No')} ${tot.N}</span><span><i style="background:${css('--hold')};border-radius:50%"></i>${T('Abstención','Abstained')} ${tot.B}</span><span><i style="background:${css('--off')};opacity:.4;border-radius:50%"></i>${T('Ausente','Absent')} ${tot.U}</span>${tot.X?`<span><i style="background:${css('--off')};opacity:.15;border-radius:50%"></i>${T('no integraba la Cámara','not a member then')} ${tot.X}</span>`:''}`;
+}
+function selectVote(chid,k){VSEL[chid]=k;colourVotes(chid)}
+function voteHistory(ch,C){
+  const col={A:css('--accent'),N:css('--s5'),B:css('--hold'),U:css('--off')};
+  const rows=C.blocs.map(b=>{const t={A:0,N:0,B:0,U:0};C.by[b].forEach(p=>C.rolls.forEach(k=>{const v=p.votes[k];if(v)t[v]++}));return {b,t,n:t.A+t.N+t.B+t.U}}).filter(r=>r.n>0);
+  const W=360,rowH=22,l=118,r=10,H=12+rows.length*rowH,mx=Math.max(...rows.map(x=>x.n));
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(T('Historial por bloque','History by bloc'))}">`;
+  rows.forEach((x,i)=>{const yy=6+i*rowH;let acc=l;const nm=x.b.length>18?x.b.slice(0,17)+'…':x.b;s+=`<text class="lbl" x="${l-6}" y="${yy+12}" text-anchor="end" style="font-size:9.5px;font-family:var(--ui)" data-tip="${esc(x.b)}">${esc(nm)}</text>`;
+    ['A','N','B','U'].forEach(v=>{const w=(W-l-r)*x.t[v]/mx;if(w>0){s+=`<rect x="${acc.toFixed(1)}" y="${yy}" width="${Math.max(w-1,0.5).toFixed(1)}" height="16" fill="${col[v]}" ${v==='U'?'opacity=".4"':''} rx="2" data-tip="${esc(x.b+' · '+{A:T('afirmativos','yes'),N:T('negativos','no'),B:T('abstenciones','abstentions'),U:T('ausencias','absences')}[v]+': '+x.t[v]+' '+T('en','across')+' '+C.rolls.length+' '+T('votaciones','roll calls'))}"/>`;acc+=w}})});
+  return s+'</svg>';
+}
+function renderVotes(){
+  const el=document.getElementById('votes'); if(!el)return;
+  el.innerHTML=CHAMBERS.map(ch=>{const C=buildChamber(ch); if(!C.rolls.length)return '';
+    const chips=`<div class="chips">${C.rolls.map(k=>`<button class="chip" data-k="${k}" aria-pressed="false" onclick="selectVote('${ch.id}','${k}')">${esc(T(ROLL_SHORT[k].es,ROLL_SHORT[k].en))}</button>`).join('')}</div>`;
+    return `<figure class="ch rv in" id="vw-${ch.id}"><figcaption class="top"><b>${esc(T(ch.es,ch.en))} · ${C.list.length} ${T('legisladores en','legislators across')} ${C.rolls.length} ${T('votaciones','roll calls')}</b><span class="howto">${T('Elegí una votación. Cada punto es la misma persona en el mismo lugar; solo cambia el color según cómo votó ese día.','Pick a roll call. Each dot is the same person in the same place; only the colour changes with how they voted that day.')}</span></figcaption>${chips}<p class="vnote small muted" style="margin:0 0 8px"></p><div class="legend vleg" style="margin-bottom:10px"></div><div class="vcirc">${voteFixedSvg(ch,C)}</div><details class="fold quiet"><summary>${T('Historial: cómo votó cada bloque en las','History: how each bloc voted across the')} ${C.rolls.length} ${T('votaciones','roll calls')}</summary><div class="body vhist" style="max-width:520px"><div class="small muted" style="margin-bottom:8px">${T('Suma de votos de cada bloque. Los bloques cambiaron entre 2024 y 2026; cada persona cuenta con su bloque más reciente.','Sum of each bloc\'s votes. Blocs changed between 2024 and 2026; each person counts under their most recent bloc.')}</div>${voteHistory(ch,C)}</div></details></figure>`}).join('');
+  CHAMBERS.forEach(ch=>colourVotes(ch.id));
+}
+
+function voteGrid(k){
+  const v=D.votes[k]; if(!v)return '';
+  const by={}; v.rows.forEach(r=>{(by[r.b]=by[r.b]||[]).push(r)});
+  const blocs=Object.keys(by).sort((a,b)=>by[b].length-by[a].length);
+  const tot={A:0,N:0,B:0,U:0}; v.rows.forEach(r=>tot[VC[r.v]||'U']++);
+  const leg=`<div class="legend" style="margin-bottom:10px"><span><i style="background:${css('--accent')}"></i>${T('Afirmativo','Yes')} ${tot.A}</span><span><i style="background:${css('--alarm')}"></i>${T('Negativo','No')} ${tot.N}</span><span><i style="background:${css('--hold')}"></i>${T('Abstención','Abstained')} ${tot.B}</span><span><i style="background:${css('--off')};opacity:.5"></i>${T('Ausente','Absent')} ${tot.U}</span></div>`;
+  return leg+blocs.map(b=>`<div class="bloc"><div class="bn"><span>${esc(b||T('sin bloque','no bloc'))}</span><span>${by[b].length}</span></div><div class="vg">${by[b].slice().sort((a,c)=>(VC[a.v]||'U').localeCompare(VC[c.v]||'U')).map(r=>`<i class="${VC[r.v]||'U'}" data-tip="${esc(r.n+' · '+(r.p||'')+' · '+r.v)}"></i>`).join('')}</div></div>`).join('');
+}
+function ramp(p){if(p==null)return css('--surface-2');if(p<=0)return css('--q1');if(p<5)return css('--q2');if(p<15)return css('--q3');if(p<50)return css('--q4');return css('--q5')}
+let RN={};
+function proj(lon,lat){const p=D.proj;return [(lon-p.x0)*p.k*p.S,(p.y1-lat)*p.S]}
+function mapBase(){return `<svg viewBox="2 1 994 2098" role="img"><g>${D.dept.map(d=>{const r=RN[d.id];const p=r?r.pct:null;return `<path class="dep ${p!=null&&p>15?'hi':''}" d="${d.d}" fill="${ramp(p)}" data-tip="${esc(d.name+', '+d.prov+(p!=null?': '+dec(p,1)+' %':': '+T('sin dato','no data')))}"/>`}).join('')}</g><g>${D.prov.filter(p=>p.id!=='malvinas').map(p=>`<path class="prov" d="${p.d}"/>`).join('')}</g>`}
+/* v0.6: three powers coloured, status strip, unit growth bars, departments on the map, circle-packed votes, zoom on department, click for sources */
+const POWER=[{es:'Congreso',en:'Congress',c:'--accent',s:'--accent-soft'},{es:'Tribunales',en:'Courts',c:'--hold',s:'--hold-soft'},{es:'Territorio',en:'Territory',c:'--ok',s:'--ok-soft'}];
+function renderLanes(){
+  const g=document.getElementById('lanes-g'); let s='';
+  const lx=i=>20+i*140, ly=30, lw=124, lh=96, ox=i=>100+i*230, oy=250, ow=160, oh=38;
+  s+=`<defs>${POWER.map((p,i)=>`<marker id="ah${i}" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="${css(p.c)}"/></marker>`).join('')}</defs>`;
+  LANES.forEach((l,i)=>{s+=`<rect class="lane-box" x="${lx(i)}" y="${ly}" width="${lw}" height="${lh}" rx="8"/><text class="lane-t" x="${lx(i)+10}" y="${ly+22}">${esc(T(l.es,l.en))}</text>`;
+    wrap(T(l.s.es,l.s.en),24).forEach((ln,k)=>{s+=`<text class="lane-s" x="${lx(i)+10}" y="${ly+42+k*14}">${esc(ln)}</text>`});
+    l.to.forEach((t,k)=>{const x1=lx(i)+lw/2+(k?10:-10),y1=ly+lh,x2=ox(t)+ow/2,y2=oy;s+=`<path d="M${x1},${y1} C${x1},${y1+60} ${x2},${y2-60} ${x2},${y2-3}" fill="none" stroke="${css(POWER[t].c)}" stroke-width="1.8" marker-end="url(#ah${t})"/>`})});
+  POWER.forEach((o,i)=>{s+=`<rect x="${ox(i)}" y="${oy}" width="${ow}" height="${oh}" rx="8" fill="${css(o.s)}" stroke="${css(o.c)}" stroke-width="1.5"/><text class="lane-t" x="${ox(i)+ow/2}" y="${oy+24}" text-anchor="middle" fill="${css(o.c)}">${esc(T(o.es,o.en))}</text>`});
+  g.innerHTML=s;
+}
+/* status strip for the five limits */
+function chartSwitch(){
+  const W=640,H=215,left=16,right=624,y0=70,bh=54;
+  const today=new Date().toISOString().slice(0,10);const segs=[{a:'2011-12-22',b:'2023-12-21',on:true,es:'12 años',en:'12 years'},{a:'2023-12-21',b:'2024-01-29',on:false,es:'39 días',en:'39 days'},{a:'2024-01-29',b:'2026-09-29',on:true,es:'2 años y 8 meses',en:'2 years, 8 months'},{a:'2026-09-29',b:today,on:false,es:'hoy',en:'today'}];
+  const VOTE='2026-10-15';const T0s=Date.parse('2011-12-22'),T1s=Math.max(Date.parse(today),Date.parse(VOTE))+86400000*25; const x=d=>left+(right-left)*(Date.parse(d)-T0s)/(T1s-T0s);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(T('La Ley de Tierras, prendida y apagada','The Land Law, on and off'))}">`;
+  segs.forEach((g,i)=>{const xa=x(g.a),xb=x(g.b),w=xb-xa;const col=g.on?css('--ok'):css('--fg-3');
+    s+=`<rect x="${xa.toFixed(1)}" y="${y0}" width="${Math.max(w,2).toFixed(1)}" height="${bh}" fill="${col}" rx="${i===0?6:0}" data-tip="${esc((g.on?T('Vigente','In force'):T('Sin efecto','No effect'))+' · '+g.a+' → '+(g.b===today?T('hoy','today'):g.b))}"/>`;
+    const lab=T(g.es,g.en); const inside=w>70;
+    s+=`<text class="val" x="${(inside?xa+w/2:(i===1?xa-6:xb+6)).toFixed(1)}" y="${inside?y0+bh/2+5:y0+bh/2+5}" text-anchor="${inside?'middle':(i===1?'end':'start')}" fill="${inside?(g.on?'#0d1114':'#fff'):css('--fg')}" style="font-size:${inside?13:11}px;font-family:var(--display);font-weight:800">${esc(lab)}</text>`;
+    const st=g.on?T('PRENDIDA','ON'):T('APAGADA','OFF'); if(inside)s+=`<text class="lbl" x="${(xa+w/2).toFixed(1)}" y="${y0+bh/2+20}" text-anchor="middle" fill="${g.on?'#0d1114':'#fff'}" style="font-size:9px;letter-spacing:.08em">${st}</text>`});
+  [['2011-12-22',T('nace la ley','law is born'),'start'],['2023-12-21',T('DNU la deroga','decree repeals it'),'end'],['2024-01-29',T('un juez la frena','a judge freezes it'),'end'],['2026-09-29',T('la Corte levanta el freno','the Court lifts the freeze'),'end']].forEach(([d,l,anc],k)=>{const xx=x(d);const up=k%2===0;const depth=k===3?52:26;s+=`<line x1="${xx.toFixed(1)}" y1="${up?y0-26:y0+bh+4}" x2="${xx.toFixed(1)}" y2="${up?y0:y0+bh+depth}" stroke="${css('--fg-2')}" stroke-width="1"/><text class="lbl" x="${(xx+(anc==='start'?3:-3)).toFixed(1)}" y="${up?y0-30:y0+bh+depth+14}" text-anchor="${anc}" style="font-size:10px"><tspan class="mono" style="font-weight:600;fill:var(--fg)">${d}</tspan> ${esc(l)}</text>`});
+  if(today<VOTE){const xv=x(VOTE);s+=`<line x1="${xv.toFixed(1)}" y1="${y0-26}" x2="${xv.toFixed(1)}" y2="${y0+bh}" stroke="${css('--fg')}" stroke-width="1.5" stroke-dasharray="4 3"/><text class="lbl" x="${(xv-3).toFixed(1)}" y="${y0-44}" text-anchor="end" style="font-size:10px"><tspan class="mono" style="font-weight:600;fill:var(--fg)">${VOTE}</tspan> ${T('vota Diputados','Diputados votes')}</text>`}
+  s+='</svg>';
+  const legs=`<div class="legend"><span><i style="background:${css('--ok')}"></i>${T('prendida: regían los cinco límites','on: the five limits applied')}</span><span><i style="background:${css('--fg-3')}"></i>${T('apagada: sin tope del 15 %, sin subtope del 30 %, sin máximo de 1.000 ha, sin protección de cuerpos de agua','off: no 15% cap, no 30% sub-cap, no 1,000 ha maximum, no water-body protection')}</span></div>`;
+  fig('ch-switch',T('Desde el 29 de septiembre un extranjero puede comprar cualquier cantidad de tierra rural','Since 29 September a foreigner can buy any amount of rural land'),T('La banda es la Ley de Tierras en el tiempo: verde cuando ponía límites, gris cuando no. Hoy está gris. Cuatro días la prendieron y la apagaron.','The band is the Land Law over time: green when it set limits, grey when it did not. Today it is grey. Four days switched it on and off.'),s,legs,[['Ley 26.737','https://faolex.fao.org/docs/pdf/arg108188.pdf'],['Chequeado','https://chequeado.com/el-explicador/ley-de-tierras-que-puede-pasar-ahora-con-los-limites-a-la-propiedad-extranjera-tras-el-fallo-de-la-corte-suprema/']],T('No muestra: el certificado del Registro siguió emitiéndose durante la cautelar; qué hace el Registro desde el fallo no fue publicado.','Does not show: the Registry kept issuing certificates during the freeze; what it does since the ruling was not published.'));
+}
+function chartLand(){
+  const pts=D.series.foreign_land_ha_by_year.filter(p=>p.year===2018||p.year===2026);
+  const W=560,cell=9,gap=2.5,cols=10,left=60,colW=200,H=240,base=H-30,base18=125;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(T('2018 y 2026 en cuadrados','2018 and 2026 as squares'))}">`;
+  pts.forEach((p,i)=>{const x0=left+i*colW,n=Math.round(p.ha/1e5);
+    for(let k=0;k<n;k++){const c=k%cols,r=Math.floor(k/cols);const col=css('--alarm');s+=`<rect x="${(x0+c*(cell+gap)).toFixed(1)}" y="${(base-(r+1)*(cell+gap)).toFixed(1)}" width="${cell}" height="${cell}" rx="1.5" fill="${col}" opacity="${k>=base18?1:.45}"/>`}
+    s+=`<text class="val" x="${x0+cols*(cell+gap)/2}" y="${(base-Math.ceil(n/cols)*(cell+gap)-10).toFixed(1)}" text-anchor="middle" style="font-size:14px">${dec(p.ha/1e6,1)} M ha</text><text class="lbl" x="${x0+cols*(cell+gap)/2}" y="${base+18}" text-anchor="middle" style="font-size:12px">${p.year}</text>`;});
+  const xb=left+colW+cols*(cell+gap)+16, yb=base-13*(cell+gap);
+  s+=`<text x="${xb}" y="${yb+4}" fill="${css('--alarm')}" style="font-family:var(--display);font-weight:900;font-size:26px">+8</text><text class="lbl" x="${xb}" y="${yb+22}" style="font-size:11px">${T('cuadrados','squares')}</text><text class="val" x="${xb}" y="${yb+42}" style="font-size:12px">= +780.000 ha</text><text class="lbl" x="${xb}" y="${yb+58}" style="font-size:11px">+6,2 % ${T('en ocho años','in eight years')}</text></svg>`;
+  const leg=`<div class="legend"><span><i style="background:${css('--alarm')};opacity:.45"></i>${T('1 cuadrado chico = 100.000 ha extranjeras','1 small square = 100,000 foreign ha')}</span><span><i style="background:${css('--alarm')}"></i>${T('lo que se sumó desde 2018','added since 2018')}</span></div>`;
+  fig('ch-land',T('Desde 2018 se sumaron 780.000 hectáreas: ocho cuadrados más','Since 2018, 780,000 hectares were added: eight more squares'),T('Es un acercamiento a los cinco cuadrados naranjas de arriba: cada uno de aquellos son unos 27 de estos. Dos pilas, una por relevamiento del Registro; los ocho más intensos son lo que se sumó.','A close-up of the five orange squares above: each of those is about 27 of these. Two stacks, one per Registry survey; the eight strongest are what was added.'),s,leg,[['Chequeado','https://chequeado.com/el-explicador/tierras-en-manos-extranjeras-aumentaron-mas-de-un-6-desde-2018-y-31-departamentos-superan-el-limite-legal/'],['Observatorio de Tierras','https://www.observatoriodetierras.ar/2025/12/la-extranjerizacion-de-tierras-en.html']],T('No muestra: 2013 y 2015 (15,9 M y 16,3 M). Esos años contaban «extranjero» con otra definición, cambiada por el Decreto 820/2016, y no se comparan con estos.','Does not show: 2013 and 2015 (15.9 M and 16.3 M). Those years counted "foreign" under a different definition, changed by Decree 820/2016, and do not compare with these.'));
+}
+function chartDeps(){
+  const rows=D.rntr.filter(r=>r.pct!=null).sort((a,b)=>b.pct-a.pct);
+  const W=560,H=330,l=40,r=200,t=28,b=30,n=rows.length,bw=(W-l-r)/n,y=v=>t+(H-t-b)*(1-v/60),x=i=>l+i*bw;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(T('Departamentos ordenados por tierra extranjera','Departments sorted by foreign land'))}">`;
+  [0,15,30,50].forEach(v=>{s+=`<line class="grid" x1="${l}" y1="${y(v)}" x2="${W-r}" y2="${y(v)}"/><text class="lbl" x="${l-6}" y="${y(v)+4}" text-anchor="end">${v} %</text>`});
+  rows.forEach((d,i)=>{const h=y(0)-y(Math.min(d.pct,60));const col=d.pct>15?css('--alarm'):css('--q3');s+=`<rect x="${x(i).toFixed(2)}" y="${(y(0)-h).toFixed(1)}" width="${Math.max(bw-0.2,0.5).toFixed(2)}" height="${h.toFixed(1)}" fill="${col}" data-tip="${esc(d.dep+', '+d.prov+': '+dec(d.pct,1)+' %')}"/>`});
+  s+=`<line x1="${l}" y1="${y(15)}" x2="${W-r}" y2="${y(15)}" stroke="${css('--fg')}" stroke-width="1.5" stroke-dasharray="5 3"/><text class="ttl" x="${W-r-4}" y="${y(15)-5}" text-anchor="end" style="font-size:10.5px">${T('tope derogado: 15 %','repealed cap: 15%')}</text>`;
+  s+=`<text class="val" x="${x(0)+4}" y="${y(60)+12}" style="font-size:11px">${T('5 superan el 50 %','5 above 50%')}</text><text class="val" x="${x(31)+6}" y="${y(15)-20}" style="font-size:11px">${T('← 31 superan el 15 %','← 31 above 15%')}</text>`;
+  s+=`<text class="lbl" x="${l}" y="${H-10}">${T('512 departamentos, de mayor a menor; 52 tienen 0 %','512 departments, high to low; 52 have 0%')}</text>`;
+  const hi={};D.rntr.forEach(d=>{if(d.pct!=null&&d.pct>15)hi[d.in1]=d.pct});
+  const sc=0.135, mx=W-r+22, my=t-10;
+  s+=`<g transform="translate(${mx},${my}) scale(${sc})">${D.dept.map(d=>`<path d="${d.d}" fill="${hi[d.id]!=null?css('--alarm'):css('--surface-2')}" stroke="${hi[d.id]!=null?css('--bg'):'none'}" stroke-width="2"/>`).join('')}${D.prov.filter(p=>p.id!=='malvinas').map(p=>`<path d="${p.d}" fill="none" stroke="${css('--fg-3')}" stroke-width="3"/>`).join('')}</g>`;
+  s+=`<text class="lbl" x="${mx+70}" y="${H-10}" text-anchor="middle">${T('los 31, en el mapa','the 31, on the map')}</text></svg>`;
+  fig('ch-deps',T('31 departamentos ya superan el tope que la ley ponía; 5 superan la mitad','31 departments already exceed the cap the law set; 5 exceed half'),T('Izquierda: cada barra es un departamento, de mayor a menor. Derecha: los mismos 31, en naranja sobre el mapa.','Left: each bar is a department, high to low. Right: the same 31, in orange on the map.'),s,'',[['RNTR, agosto 2025','https://www.argentina.gob.ar/justicia/tierrasrurales/datos/extranjerizacion-departamento']],T('No muestra: el tope también se calculaba por provincia y ninguna provincia lo supera (la más alta es Salta, 11,4 %).','Does not show: the cap was also computed by province and no province exceeds it (highest is Salta, 11.4%).'));
+}
+/* votes: circle packing by bloc, grid as alternative */
+const VOTE_MODE={};
+function packBlocs(blocs,by){
+  const items=blocs.map(b=>({b,n:by[b].length,r:9.5*Math.sqrt(by[b].length)+14}));
+  const placed=[];
+  items.forEach((it,idx)=>{if(idx===0){it.x=0;it.y=0;placed.push(it);return}
+    let best=null;for(let rad=0;rad<2000&&!best;rad+=6){for(let a=0;a<Math.PI*2;a+=0.17){const x=rad*Math.cos(a),y=rad*Math.sin(a);if(placed.every(p=>Math.hypot(p.x-x,p.y-y)>=p.r+it.r+6)){const d=Math.hypot(x,y);if(!best||d<best.d)best={x,y,d}}}}
+    it.x=best.x;it.y=best.y;placed.push(it)});
+  const minx=Math.min(...placed.map(p=>p.x-p.r)),maxx=Math.max(...placed.map(p=>p.x+p.r)),miny=Math.min(...placed.map(p=>p.y-p.r)),maxy=Math.max(...placed.map(p=>p.y+p.r));
+  return {items:placed,minx,maxx,miny,maxy};
+}
+function voteCircles(k){
+  const v=D.votes[k]; const by={}; v.rows.forEach(r=>{(by[r.b]=by[r.b]||[]).push(r)});
+  const blocs=Object.keys(by).sort((a,b)=>by[b].length-by[a].length);
+  const P=packBlocs(blocs,by); const pad=28; const W=P.maxx-P.minx+pad*2, H=P.maxy-P.miny+pad*2+10;
+  let s=`<svg viewBox="0 0 ${W.toFixed(0)} ${H.toFixed(0)}" role="img" aria-label="${esc(T('Votos por bloque','Votes by bloc'))}">`;
+  const col={A:css('--accent'),N:css('--s5'),B:css('--hold'),U:css('--off')};
+  P.items.forEach(it=>{const cx=it.x-P.minx+pad, cy=it.y-P.miny+pad; s+=`<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${it.r.toFixed(1)}" fill="${css('--surface-2')}" stroke="${css('--line')}"/>`;
+    const rows=by[it.b].slice().sort((a,c)=>(VC[a.v]||'U').localeCompare(VC[c.v]||'U'));
+    rows.forEach((r,i)=>{const ang=i*2.39996, rad=4.9*Math.sqrt(i+0.5);const x=cx+rad*Math.cos(ang),y=cy+rad*Math.sin(ang);const vc=VC[r.v]||'U';s+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.6" fill="${col[vc]}" ${vc==='U'?'opacity=".45"':''} data-tip="${esc(r.n+' · '+(r.p||'')+' · '+r.v)}"/>`});
+    const nm=it.b.length>22?it.b.slice(0,21)+'…':it.b; s+=`<text class="lbl" x="${cx.toFixed(1)}" y="${(cy+it.r+11).toFixed(1)}" text-anchor="middle" style="font-size:9px" data-tip="${esc(it.b+': '+it.n)}">${esc(nm)}</text>`});
+  s+='</svg>'; return s;
+}
+function voteBlock(k){
+  const t=VOTE_T[k], v=D.votes[k]; const tot={A:0,N:0,B:0,U:0}; v.rows.forEach(r=>tot[VC[r.v]||'U']++);
+  const mode=VOTE_MODE[k]||'circles';
+  const leg=`<div class="legend" style="margin:6px 0 10px"><span><i style="background:${css('--accent')};border-radius:50%"></i>${T('Afirmativo','Yes')} ${tot.A}</span><span><i style="background:${css('--s5')};border-radius:50%"></i>${T('Negativo','No')} ${tot.N}</span><span><i style="background:${css('--hold')};border-radius:50%"></i>${T('Abstención','Abstained')} ${tot.B}</span><span><i style="background:${css('--off')};opacity:.5;border-radius:50%"></i>${T('Ausente','Absent')} ${tot.U}</span></div>`;
+  const tog=`<div class="chips" style="margin:0 0 8px"><button class="chip" aria-pressed="${mode==='circles'}" onclick="setVoteMode('${k}','circles')">${T('Círculos por bloque','Circles by bloc')}</button><button class="chip" aria-pressed="${mode==='grid'}" onclick="setVoteMode('${k}','grid')">${T('Grilla','Grid')}</button></div>`;
+  return `<p class="small muted" style="margin:0 0 6px">${esc(T(t.n.es,t.n.en))} <a class="src" href="${v.source||'https://comovoto.dev.ar/'}" target="_blank" rel="noopener">${T('acta','record')}</a></p>${tog}${leg}${mode==='circles'?`<div class="vcirc">${voteCircles(k)}</div>`:voteGrid(k).replace(/^<div class="legend".*?<\/div>/,'')}`;
+}
+function setVoteMode(k,m){VOTE_MODE[k]=m;renderVotes()}
+let mapSel=null;
+function renderMap(){
+  RN={}; D.rntr.forEach(r=>RN[r.in1]=r);
+  const prov={}; D.series.rigi_projects.filter(p=>p.status==='approved').forEach(p=>{const pv=p.province.split(';')[0].trim();(prov[pv]=prov[pv]||{n:0,usd:0});prov[pv].n++;prov[pv].usd+=(p.usd_min||0)});
+  const slug=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z]+/g,'-').replace(/^-|-$/g,'');
+  let dots='';Object.keys(prov).forEach(pv=>{const c=D.provc[slug(pv)];if(!c)return;const r=6+Math.sqrt(prov[pv].usd/1e8)*2.2;dots+=`<circle class="dot rigi" cx="${c.centroid[0]}" cy="${c.centroid[1]}" r="${r.toFixed(1)}" fill="${css('--fg')}" stroke="${css('--bg')}" stroke-width="2" data-tip="${esc(pv+': '+prov[pv].n+' RIGI · USD '+fmt(Math.round(prov[pv].usd/1e6))+' M')}"/>`});
+  const legend=`<div class="ramp"><span>${T('extranjerizado','foreign-held')}:</span><i style="background:${css('--q1')}"></i>0 %<i style="background:${css('--q2')}"></i>${T('menos de 5','under 5')}<i style="background:${css('--q3')}"></i>5–15<i style="background:${css('--q4')};outline:2px solid ${css('--alarm')}"></i>15–50 ${T('(sobre el tope)','(over the cap)')}<i style="background:${css('--q5')};outline:2px solid ${css('--alarm')}"></i>${T('más de 50 %','over 50%')}<i style="background:${css('--fg')};border-radius:50%;width:12px;margin-left:12px"></i>${T('RIGI aprobado','approved RIGI')}</div>`;
+  document.getElementById('map1').innerHTML=`<div class="mapctl" id="mapctl" hidden><span id="mapsel"></span><button class="btn" style="padding:6px 12px;font-size:.78rem" onclick="zoomReset()">${T('Ver todo el país','See the whole country')}</button></div>`+mapBase().replace('<svg ','<svg id="svgmap" ')+`<g>${dots}</g></svg>`+legend;
+  const top=D.rntr.filter(r=>r.pct!=null).sort((a,b)=>b.pct-a.pct).slice(0,10);
+  document.getElementById('top10').innerHTML=`<p class="small muted" style="margin:0 0 8px">${T('Tocá un departamento para verlo en el mapa.','Tap a department to see it on the map.')}</p><table><tr><th>${T('Departamento','Department')}</th><th>${T('Provincia','Province')}</th><th>%</th><th>${T('ha extranjeras','foreign ha')}</th></tr>${top.map(r=>`<tr class="rowsel" tabindex="0" onclick="zoomDept('${r.in1}')"><td>${esc(r.dep)}</td><td>${esc(r.prov)}</td><td class="mono">${dec(r.pct,1)}</td><td class="mono">${fmt(Math.round(r.f))}</td></tr>`).join('')}</table>`;
+  D.dept.forEach(d=>{const el=document.querySelector(`#svgmap .dep[data-id="${d.id}"]`);});
+  if(mapSel)zoomDept(mapSel,true);
+}
+function zoomDept(in1,keep){
+  const svg=document.getElementById('svgmap'); if(!svg)return; const r=RN[in1]; const paths=[...svg.querySelectorAll('.dep')];
+  const dIdx=D.dept.findIndex(d=>d.id===in1); if(dIdx<0)return; const prov=D.dept[dIdx].prov;
+  let minx=1e9,miny=1e9,maxx=-1e9,maxy=-1e9;
+  D.dept.forEach((d,i)=>{if(d.prov!==prov)return;const bb=paths[i].getBBox();minx=Math.min(minx,bb.x);miny=Math.min(miny,bb.y);maxx=Math.max(maxx,bb.x+bb.width);maxy=Math.max(maxy,bb.y+bb.height)});
+  const pad=20; svg.setAttribute('viewBox',`${minx-pad} ${miny-pad} ${maxx-minx+pad*2} ${maxy-miny+pad*2}`);
+  paths.forEach((p,i)=>{p.classList.toggle('sel',D.dept[i].id===in1);p.style.opacity=D.dept[i].prov===prov?'1':'.25'});
+  svg.querySelectorAll('.rigi').forEach(c=>c.style.display='none');
+  mapSel=in1; document.getElementById('mapctl').hidden=false; document.getElementById('mapsel').textContent=`${r.dep}, ${r.prov}: ${dec(r.pct,1)} % · ${fmt(Math.round(r.f))} ha`;
+  if(!keep)document.getElementById('map1').scrollIntoView({block:'start',behavior:'smooth'});
+}
+function zoomReset(){const svg=document.getElementById('svgmap');if(!svg)return;svg.setAttribute('viewBox','2 1 994 2098');svg.querySelectorAll('.dep').forEach(p=>{p.classList.remove('sel');p.style.opacity='1'});svg.querySelectorAll('.rigi').forEach(c=>c.style.display='');mapSel=null;document.getElementById('mapctl').hidden=true}
+/* conflicts: click a dot or a company bar to see sources */
+const SEC={mining:{es:'Minería',en:'Mining',c:'--s1'},oil_gas:{es:'Petróleo y gas',en:'Oil and gas',c:'--s3'},lithium:{es:'Litio',en:'Lithium',c:'--s4'},land:{es:'Tierra',en:'Land',c:'--alarm'},forest:{es:'Bosques',en:'Forests',c:'--fg-3'},agro:{es:'Agro',en:'Agro',c:'--fg-3'},water:{es:'Agua',en:'Water',c:'--fg-3'},other:{es:'Otros',en:'Other',c:'--fg-3'}};
+const STA={active:{es:'activo',en:'active',k:'st-alarm'},paused:{es:'pausado',en:'paused',k:'st-hold'},won:{es:'frenado',en:'stopped',k:'st-on'},lost:{es:'perdido',en:'lost',k:'st-off'},unknown:{es:'sin dato',en:'unknown',k:'st-off'}};
+function renderBgMap(){
+  const el=document.getElementById('bgmap'); if(!el||!D||el.dataset.done)return;
+  const hi={}; D.rntr.forEach(d=>{if(d.pct!=null&&d.pct>15)hi[d.in1]=1});
+  el.innerHTML=`<svg viewBox="2 1 994 2098">${D.dept.map(d=>`<path class="d ${hi[d.id]?'hi':''}" d="${d.d}"/>`).join('')}${D.prov.filter(p=>p.id!=='malvinas').map(p=>`<path class="p" d="${p.d}"/>`).join('')}</svg>`;
+  el.dataset.done='1';
+}
+function renderConflicts(){
+  const C=D.conflicts||[]; if(!C.length){document.getElementById('cflist').innerHTML='';return}
+  const cnt={};C.forEach(c=>(c.companies||[]).forEach(co=>cnt[co]=(cnt[co]||0)+1));
+  const top=Object.entries(cnt).sort((a,b)=>b[1]-a[1]).slice(0,10);
+  const W=560,H=24+top.length*26,l=170,r=40,mx=top[0][1];
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(T('Empresas con más conflictos','Companies with most conflicts'))}">`;
+  top.forEach(([co,n],i)=>{const yy=10+i*26,w=(W-l-r)*n/mx;s+=`<g class="clk" tabindex="0" role="button" data-co="${esc(co)}"><text class="ttl" x="${l-8}" y="${yy+13}" text-anchor="end" style="font-size:11px">${esc(co)}</text><rect x="${l}" y="${yy}" width="${w}" height="18" fill="${css('--accent')}" rx="3" data-tip="${esc(co+': '+n+' · '+T('tocá para ver las fuentes','tap to see the sources'))}"/><text class="val" x="${l+w+6}" y="${yy+13}">${n}</text></g>`});
+  s+='</svg>';
+  fig('ch-cos',T('YPF aparece en 8 de los 58 conflictos; Glencore en 5; Barrick y Yamana en 4','YPF appears in 8 of the 58 conflicts; Glencore in 5; Barrick and Yamana in 4'),T('Cantidad de conflictos de esta muestra en los que figura cada empresa. Tocá una barra para ver los casos y sus fuentes.','Number of conflicts in this sample in which each company appears. Tap a bar to see the cases and their sources.'),s,'',[['EJAtlas','https://ejatlas.org/'],['OCMAL','https://www.ocmal.org/']],T('No muestra: el tamaño de cada conflicto ni si la empresa es la única parte. Es una muestra de 58 casos, no un censo.','Does not show: the size of each conflict or whether the company is the only party. A sample of 58 cases, not a census.'));
+  let dots='';C.forEach((c,i)=>{const [x,y]=proj(c.lon,c.lat);const col=css(SEC[c.sector]?SEC[c.sector].c:'--fg-3');dots+=`<circle class="dot clk" tabindex="0" role="button" data-ci="${i}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9" fill="${col}" data-tip="${esc(T(c.name_es,c.name_en)+' · '+(c.companies||[]).join(', ')+' · '+T('tocá para ver fuentes','tap for sources'))}"/>`});
+  const base=`<svg viewBox="2 1 994 2098" role="img"><g>${D.prov.filter(p=>p.id!=='malvinas').map(p=>`<path d="${p.d}" fill="${css('--surface-2')}" stroke="${css('--fg-3')}" stroke-width="1"/>`).join('')}</g><g>${dots}</g></svg>`;
+  const leg=`<div class="legend" style="margin-top:8px">${['mining','oil_gas','lithium','land'].map(k=>`<span><i style="background:${css(SEC[k].c)};border-radius:50%"></i>${esc(T(SEC[k].es,SEC[k].en))}</span>`).join('')}<span><i style="background:${css('--fg-3')};border-radius:50%"></i>${T('bosques, agro, agua, otros','forests, agro, water, other')}</span></div>`;
+  document.getElementById('map2').innerHTML=base+leg;
+  const bySec={};C.forEach(c=>(bySec[c.sector]=bySec[c.sector]||[]).push(c));
+  CF_BY=bySec; if(!CF_SEL||!bySec[CF_SEL])CF_SEL='mining';
+  document.getElementById('cflist').innerHTML=`<div class="seccs">${Object.keys(SEC).filter(k=>bySec[k]).map(k=>`<button class="chip" aria-pressed="${k===CF_SEL}" onclick="selectSector('${k}')"><i style="background:${css(SEC[k].c)}"></i>${esc(T(SEC[k].es,SEC[k].en))} ${bySec[k].length}</button>`).join('')}</div><div id="cfcards"></div>`;
+  renderCfCards();
+}
+let CF_BY={},CF_SEL='mining';
+function selectSector(k){CF_SEL=k;document.querySelectorAll('.seccs .chip').forEach(b=>b.setAttribute('aria-pressed',b.textContent.trim().startsWith(T(SEC[k].es,SEC[k].en))));renderCfCards()}
+function renderCfCards(){const list=(CF_BY[CF_SEL]||[]).slice().sort((a,b)=>(a.province||'').localeCompare(b.province||''));document.getElementById('cfcards').innerHTML=list.map(c=>cfCard(c)).join('')}
+function cfCard(c){const st=STA[c.status]||STA.unknown;return `<div class="cf"><div class="h"><b>${esc(T(c.name_es,c.name_en))}</b><span class="state ${st.k}">${esc(T(st.es,st.en))}</span></div><div class="co">${esc(c.province)}${c.since?' · '+T('desde','since')+' '+c.since:''} · <span>${esc((c.companies||[]).join(', ')||T('sin empresa nombrada','no company named'))}</span></div><div class="small">${esc(T(c.summary_es,c.summary_en))}</div>${c.actors_es?`<div class="co">${T('Quién resiste','Who resists')}: <span>${esc(c.actors_es)}</span></div>`:''}<div>${(c.sources||[]).map((u,i)=>`<a class="src" href="${u}" target="_blank" rel="noopener">${T('fuente','source')} ${i+1}</a>`).join(' ')}</div></div>`}
+function showSources(html,anchor){const r=anchor.getBoundingClientRect();pop.innerHTML=html+`<div style="margin-top:8px"><button class="btn" style="padding:5px 10px;font-size:.75rem" onclick="pop.hidden=true">${T('Cerrar','Close')}</button></div>`;pop.hidden=false;pop.style.maxWidth='340px';pop.style.left=Math.max(8,Math.min(r.left,window.innerWidth-360))+'px';pop.style.top=Math.min(r.bottom+6,window.innerHeight-200)+'px'}
+document.addEventListener('click',e=>{const g=e.target.closest&&e.target.closest('.clk');if(!g||!D)return;e.stopPropagation();
+  if(g.dataset.ci!=null){const c=D.conflicts[+g.dataset.ci];showSources(cfCard(c),g)}
+  else if(g.dataset.co){const co=g.dataset.co;const list=D.conflicts.filter(c=>(c.companies||[]).includes(co));showSources(`<b>${esc(co)}</b> · ${list.length} ${T('conflictos','conflicts')}<ul style="margin:6px 0 0;padding-left:1.1em">${list.map(c=>`<li>${esc(T(c.name_es,c.name_en))} (${esc(c.province)}) ${(c.sources||[]).slice(0,2).map((u,i)=>`<a class="src" href="${u}" target="_blank" rel="noopener">${T('fuente','source')} ${i+1}</a>`).join(' ')}</li>`).join('')}</ul>`,g)}
+},true);
+/* clearer badge labels */
+const BADGE_TXT={q:{es:'TEXTO DE LEY',en:'LAW TEXT'},r:{es:'PRENSA O INFORME',en:'PRESS OR REPORT'},i:{es:'LECTURA NUESTRA',en:'OUR READING'}};
+function relabel(){document.querySelectorAll('.b').forEach(b=>{const k=b.dataset.k||(b.classList.contains('bq')?'q':b.classList.contains('br')?'r':'i');b.textContent=T(BADGE_TXT[k].es,BADGE_TXT[k].en)})}
+
+/* page 4: the words of each law */
+function chartLaws(){
+  if(!D.laws)return; const L0=D.laws; const cols=[['ley-27742-rigi','RIGI',T('Ley 27.742, Tít. VII','Law 27.742, Title VII')],['super-rigi-mensaje-181-2026','Súper RIGI',T('proyecto, Mensaje 181/2026','bill, Message 181/2026')],['ley-26737-tierras-rurales',T('Ley de Tierras','Land Law'),'Ley 26.737']];
+  const words=[['tierra','tierra'],['rural','rural'],['dominio','dominio'],['hectarea','hectárea'],['agua','agua'],['frontera','frontera'],['extranjero','extranjero*'],['inmueble','inmueble'],['estabilidad','estabilidad'],['treinta_anos','treinta años'],['arbitraje_ciadi','arbitraje'],['impuesto','impuesto'],['exportacion','exportación'],['inversion','inversión']];
+  const W=560,rowH=26,top=54,left=120,colW=140,H=top+words.length*rowH+30; const tw={};L0.texts.forEach(t=>tw[t.id]=t.total_words);
+  const maxc=Math.max(...words.map(([k])=>Math.max(...cols.map(c=>L0.counts[k][c[0]]||0))));
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(T('Palabras por ley','Words per law'))}">`;
+  cols.forEach((c,j)=>{const x=left+j*colW+colW/2;s+=`<text class="ttl" x="${x}" y="18" text-anchor="middle" style="font-size:12px">${esc(c[1])}</text><text class="lbl" x="${x}" y="32" text-anchor="middle" style="font-size:9.5px">${esc(c[2])} · ${fmt(tw[c[0]])} ${T('palabras','words')}</text>`});
+  words.forEach(([k,label],i)=>{const y=top+i*rowH;const land=['tierra','rural','dominio','hectarea','agua','frontera'].includes(k);
+    s+=`<text class="ttl" x="${left-10}" y="${y+5}" text-anchor="end" style="font-size:11px;${land?'':'font-weight:400'}">${esc(label)}</text>`;
+    cols.forEach((c,j)=>{const n=L0.counts[k][c[0]]||0;const x=left+j*colW+colW/2;const r=n?3+9*Math.sqrt(n/maxc):0;const col=land?css('--alarm'):css('--accent');
+      if(n){s+=`<circle cx="${x}" cy="${y}" r="${r.toFixed(1)}" fill="${col}" opacity=".85" data-tip="${esc(label+' · '+c[1]+': '+n+' '+T('veces','times')+' ('+(n/tw[c[0]]*1000).toFixed(1)+' '+T('por mil palabras','per thousand words')+')')}"/><text class="val" x="${x+r+5}" y="${y+4}" style="font-size:10.5px">${n}</text>`}
+      else{s+=`<circle cx="${x}" cy="${y}" r="4" fill="none" stroke="${css('--fg-3')}" stroke-dasharray="2 2"/><text class="lbl" x="${x+9}" y="${y+4}" style="font-size:10px">0</text>`}});
+  });
+  s+=`<text class="lbl" x="${left-10}" y="${H-8}" text-anchor="end" style="font-size:9px">*</text><text class="lbl" x="${left-4}" y="${H-8}" style="font-size:9px">${T('en el RIGI y el Súper RIGI, «extranjero» refiere a sociedades, moneda o arbitraje, no a tierra','in the RIGI and Súper RIGI, "foreign" refers to companies, currency or arbitration, not land')}</text></svg>`;
+  fig('ch-laws',T('«Tierra» aparece 33 veces en la Ley de Tierras y cero en el RIGI y el Súper RIGI','"Land" appears 33 times in the Land Law and zero times in the RIGI and the Súper RIGI'),T('Contamos cada palabra en los textos completos. Un círculo es cuántas veces aparece; un círculo punteado es cero. Naranja: palabras sobre tierra. Azul: palabras sobre dinero y blindaje.','We counted each word in the full texts. A circle is how many times it appears; a dashed circle is zero. Orange: words about land. Blue: words about money and shielding.'),s,'',[['Ley 27.742','https://servicios.infoleg.gob.ar/infolegInternet/anexos/400000-404999/401266/norma.htm'],['Mensaje 181/2026','https://rest.hcdn.gob.ar/web/tramites-parlamentarios/render/adjunto/6a159afe57a5e.pdf'],['Ley 26.737','https://servicios.infoleg.gob.ar/infolegInternet/anexos/190000-194999/192150/norma.htm']],T('No muestra: lo que una ley hace sin nombrarlo. El RIGI no menciona tierra, pero blinda por treinta años a quien la explote. Y el DNU 70/2023, que sí abrió la tierra, dedica diez palabras al tema: «Derógase la Ley N° 26.737».','Does not show: what a law does without naming it. The RIGI does not mention land, but it shields whoever exploits it for thirty years. And Decree 70/2023, which did open the land, spends ten words on it: "Law 26.737 is hereby repealed".'));
+}
+
+const tip=document.getElementById('tip');
+document.addEventListener('mousemove',e=>{const t=e.target.closest&&e.target.closest('[data-tip]');if(t){tip.textContent=t.dataset.tip;tip.hidden=false;tip.style.left=Math.min(e.clientX+12,window.innerWidth-290)+'px';tip.style.top=(e.clientY+12)+'px'}else tip.hidden=true});
+document.addEventListener('touchstart',e=>{const t=e.target.closest&&e.target.closest('[data-tip]');if(t){tip.textContent=t.dataset.tip;tip.hidden=false;const r=t.getBoundingClientRect();tip.style.left=Math.min(r.left,window.innerWidth-290)+'px';tip.style.top=(r.bottom+6)+'px';setTimeout(()=>tip.hidden=true,2500)}},{passive:true});
+const pop=document.getElementById('pop');
+const BADGE={q:{es:'TEXTO DE LEY: lo leímos en la fuente primaria (la ley, el fallo, el documento oficial).',en:'LAW TEXT: we read it in the primary source (the law, the ruling, the official document).'},r:{es:'PRENSA O INFORME: lo afirma una fuente secundaria (un diario, un chequeo, un informe). Lo citamos, no lo verificamos nosotros.',en:'PRESS OR REPORT: a secondary source says so (a newspaper, a fact-check, a report). We cite it; we did not verify it ourselves.'},i:{es:'LECTURA NUESTRA: es nuestra interpretación juntando las fuentes. Puede estar equivocada; por eso va marcada.',en:'OUR READING: our interpretation joining the sources. It can be wrong; that is why it is marked.'}};
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('.b[data-k]');if(b){const r=b.getBoundingClientRect();pop.textContent=T(BADGE[b.dataset.k].es,BADGE[b.dataset.k].en);pop.hidden=false;pop.style.left=Math.min(r.left,window.innerWidth-300)+'px';pop.style.top=(r.bottom+6)+'px'}else pop.hidden=true});
+try{matchMedia('(prefers-color-scheme: light)').addEventListener('change',render)}catch(e){}
+new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+let saved='es';try{saved=localStorage.getItem('lang')||'es'}catch(e){}
+const h0=(location.hash||'').replace('#',''); const start=panels.findIndex(p=>p.id===h0); cur=start>=0?start:0; panels.forEach((p,k)=>p.classList.toggle('cur',k===cur));
+setLang(saved);
+fetch('data.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(d=>{D=d;render()}).catch(e=>{console.error('data load failed',e);document.getElementById('map1').innerHTML=`<p class="small muted">${T('No se pudieron cargar los datos (data.json)','Could not load the data file (data.json)')}: ${esc(e&&e.message||e)}</p>`});
+</script>
+</body>
+</html>
