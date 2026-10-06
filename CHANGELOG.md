@@ -2,6 +2,11 @@
 
 Formato / format: `fecha · versión`, luego la nota en español y en inglés.
 
+## 2026-10-06 · v0.8.5
+
+- ES: pasada de teléfono: los gráficos que se deslizan de costado lo avisan («↔ deslizá para ver todo el gráfico»); menús plegables y filas de tabla con altura táctil de 44 px; barras de empresas más altas y con área de toque completa; el contador se apila en una columna; un enlace compartido con #pantalla ya no queda tapado por la barra superior.
+- EN: phone pass: sideways-scrolling charts now say so ("swipe to see the whole chart"); folded menus and table rows get 44 px tap height; company bars are taller with a full-row hit area; the countdown stacks in one column; a shared link with #screen no longer lands under the top bar.
+
 ## 2026-10-06 · v0.8.4
 
 - ES: portada: el mapa entero entra en pantalla (Misiones ya no queda cortada), con un vaivén más suave; fuentes, método y discrepancias en menús plegados; el registro de cambios se muda a este archivo; botón de la comunidad destacado.

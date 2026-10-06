@@ -327,6 +327,19 @@ h2:focus,h1:focus{outline:none}
 @media(prefers-reduced-motion:no-preference){.btn.discord::after{content:"";position:absolute;inset:-3px;border-radius:999px;border:2px solid rgba(88,101,242,.55);animation:ring 2.6s ease-out infinite;pointer-events:none}}
 @keyframes ring{0%{transform:scale(1);opacity:.7}70%{transform:scale(1.12);opacity:0}100%{transform:scale(1.12);opacity:0}}
 @media(max-width:600px){.btn.discord{width:100%;justify-content:center}}
+/* v0.8.5: phone pass */
+.shint{display:none;font-family:var(--mono);font-size:.72rem;color:var(--fg-2);margin:0 0 6px;letter-spacing:.02em}
+.scrolls>.shint{display:block}
+.scrolls.scrolled>.shint{display:none}
+.scrolls{scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+@media (max-width:640px){
+  details.fold>summary{min-height:44px}
+  .rowsel td{padding:11px 8px}
+  .lanes{padding:10px}
+  .countdown{grid-template-columns:1fr;gap:6px}
+  .countdown .big{font-size:2.8rem}
+  #map2 .dot{r:20px}
+}
 </style>
 
 <div class="site" id="site" data-lang="es">
@@ -551,7 +564,7 @@ h2:focus,h1:focus{outline:none}
   </table></div>
 </div></details>
   <p class="rv" style="margin-top:18px"><span class="es">Sin financiamiento. Sin dinero de empresas. Los informes completos (ocho, unas 30.000 palabras) están disponibles a pedido.</span><span class="en">No funding. No company money. The full reports (eight, about 30,000 words) are available on request.</span></p>
-  <p class="small muted mono rv">v0.8.4 · <a class="src" href="https://github.com/camussicamusica/tierra-en-venta/blob/main/CHANGELOG.md" target="_blank" rel="noopener"><span class="es">registro de cambios</span><span class="en">change log</span></a></p>
+  <p class="small muted mono rv">v0.8.5 · <a class="src" href="https://github.com/camussicamusica/tierra-en-venta/blob/main/CHANGELOG.md" target="_blank" rel="noopener"><span class="es">registro de cambios</span><span class="en">change log</span></a></p>
 </section>
 
 <div class="bar"><div class="in">
@@ -654,7 +667,7 @@ const BLOCS=[{n:'Unión por la Patria',v:93,s:true},{n:'Provincias Unidas',v:18,
 const panels=[...document.querySelectorAll('.panel')];
 let cur=0;
 function go(d){show(cur+d)}
-function show(i){cur=Math.max(0,Math.min(panels.length-1,i));panels.forEach((p,k)=>p.classList.toggle('cur',k===cur));window.scrollTo({top:0});try{history.replaceState(null,'','#'+panels[cur].id)}catch(e){}deckUI();revealNow();try{document.title='Tierra en Venta · '+T(panels[cur].dataset.es,panels[cur].dataset.en);const hh=panels[cur].querySelector('h1,h2');if(hh){hh.setAttribute('tabindex','-1');hh.focus({preventScroll:true})}}catch(e){}}
+function show(i){cur=Math.max(0,Math.min(panels.length-1,i));panels.forEach((p,k)=>p.classList.toggle('cur',k===cur));window.scrollTo({top:0});try{history.replaceState(null,'','#'+panels[cur].id)}catch(e){}deckUI();revealNow();setTimeout(markScrollers,60);try{document.title='Tierra en Venta · '+T(panels[cur].dataset.es,panels[cur].dataset.en);const hh=panels[cur].querySelector('h1,h2');if(hh){hh.setAttribute('tabindex','-1');hh.focus({preventScroll:true})}}catch(e){}}
 function deckUI(){
   const p=panels[cur];
   document.getElementById('prog').style.width=((cur+1)/panels.length*100)+'%';
@@ -665,8 +678,9 @@ function deckUI(){
   const onTl=p.id==='etapa'; document.getElementById('minitl').hidden=!onTl; document.getElementById('ticker').hidden=onTl;
   fitRail();
 }
+function markScrollers(){document.querySelectorAll('.panel.cur figure.ch, .panel.cur .vcirc, .panel.cur .vhist, .panel.cur .lanes, .panel.cur .tscroll').forEach(el=>{const sc=el.scrollWidth>el.clientWidth+2;el.classList.toggle('scrolls',sc);let h=el.querySelector(':scope>.shint');if(sc&&!h){h=document.createElement('div');h.className='shint';h.textContent='↔ '+T('deslizá para ver todo el gráfico','swipe to see the whole chart');const fc=el.querySelector(':scope>figcaption');if(fc)fc.after(h);else el.prepend(h);el.addEventListener('scroll',()=>el.classList.add('scrolled'),{once:true,passive:true})}else if(!sc&&h)h.remove()})}
 function fitRail(){const r=document.querySelector('.rail');site.style.paddingTop=(r.offsetHeight+14)+'px'}
-window.addEventListener('resize',fitRail);
+window.addEventListener('resize',()=>{fitRail();markScrollers()});
 window.addEventListener('hashchange',()=>{const i=panels.findIndex(p=>p.id===(location.hash||'').replace('#',''));if(i>=0&&i!==cur)show(i)});
 function toggleIndex(){const ix=document.getElementById('index');ix.hidden=!ix.hidden}
 document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.rowsel,.clk')){e.preventDefault();e.target.dispatchEvent(new MouseEvent('click',{bubbles:true}));return}const tag=(e.target.tagName||'').toLowerCase();if(tag==='input'||tag==='textarea'||tag==='select')return;if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1);else if(e.key==='Escape')document.getElementById('index').hidden=true});
@@ -691,7 +705,7 @@ function render(){
   document.getElementById('orgs').innerHTML=ORGS.map(o=>`<div class="org"><span class="tag">${esc(T(KIND[o.k].es,KIND[o.k].en))}</span><b>${esc(o.n)}</b>${esc(T(o.es,o.en))} ${o.u?`<a class="src" href="${o.u}" target="_blank" rel="noopener">${T('sitio','site')}</a>`:''}</div>`).join('');
   renderLanes(); renderCountdown(); chartBlocs(); chartSwitch(); deckUI(); renderBgMap();
   if(D){[['ch-laws',chartLaws],['ch-hect',chartHect],['ch-land',chartLand],['ch-certs',chartCerts],['ch-deps',chartDeps],['ch-nat',chartNat],['ch-sector',chartSector],['votes',renderVotes],['map1',renderMap],['cflist',renderConflicts]].forEach(([id,fn])=>{try{fn()}catch(e){RENDER_ERRORS.push(id+': '+(e&&e.message||e));const el=document.getElementById(id);if(el)el.innerHTML=`<p class="small muted">${T('Este bloque no pudo dibujarse','This block could not be drawn')} (${esc(id)}: ${esc(e&&e.message||e)}).</p>`}});if(RENDER_ERRORS.length)console.error('render errors',RENDER_ERRORS)}
-  relabel(); revealNow(); watchTimeline();
+  relabel(); revealNow(); watchTimeline(); markScrollers();
   try{const sw=document.getElementById('ch-switch');if(sw&&sw.scrollWidth>sw.clientWidth)sw.scrollLeft=sw.scrollWidth}catch(e){}
 }
 const T0=Date.parse('2011-06-01'), T1=Date.parse('2026-12-31');
@@ -1001,9 +1015,9 @@ function renderConflicts(){
   const C=D.conflicts||[]; if(!C.length){document.getElementById('cflist').innerHTML='';return}
   const cnt={};C.forEach(c=>(c.companies||[]).forEach(co=>cnt[co]=(cnt[co]||0)+1));
   const top=Object.entries(cnt).sort((a,b)=>b[1]-a[1]).slice(0,10);
-  const W=560,H=24+top.length*26,l=170,r=40,mx=top[0][1];
+  const W=560,H=24+top.length*32,l=170,r=40,mx=top[0][1];
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(T('Empresas con más conflictos','Companies with most conflicts'))}">`;
-  top.forEach(([co,n],i)=>{const yy=10+i*26,w=(W-l-r)*n/mx;s+=`<g class="clk" tabindex="0" role="button" data-co="${esc(co)}"><text class="ttl" x="${l-8}" y="${yy+13}" text-anchor="end" style="font-size:11px">${esc(co)}</text><rect x="${l}" y="${yy}" width="${w}" height="18" fill="${css('--accent')}" rx="3" data-tip="${esc(co+': '+n+' · '+T('tocá para ver las fuentes','tap to see the sources'))}"/><text class="val" x="${l+w+6}" y="${yy+13}">${n}</text></g>`});
+  top.forEach(([co,n],i)=>{const yy=10+i*32,w=(W-l-r)*n/mx;s+=`<g class="clk" tabindex="0" role="button" data-co="${esc(co)}"><rect x="0" y="${yy-4}" width="${W}" height="32" fill="transparent"/><text class="ttl" x="${l-8}" y="${yy+16}" text-anchor="end" style="font-size:11px">${esc(co)}</text><rect x="${l}" y="${yy}" width="${w}" height="24" fill="${css('--accent')}" rx="3" data-tip="${esc(co+': '+n+' · '+T('tocá para ver las fuentes','tap to see the sources'))}"/><text class="val" x="${l+w+6}" y="${yy+16}">${n}</text></g>`});
   s+='</svg>';
   fig('ch-cos',T('YPF aparece en 8 de los 58 conflictos; Glencore en 5; Barrick y Yamana en 4','YPF appears in 8 of the 58 conflicts; Glencore in 5; Barrick and Yamana in 4'),T('Cantidad de conflictos de esta muestra en los que figura cada empresa. Tocá una barra para ver los casos y sus fuentes.','Number of conflicts in this sample in which each company appears. Tap a bar to see the cases and their sources.'),s,'',[['EJAtlas','https://ejatlas.org/'],['OCMAL','https://www.ocmal.org/']],T('No muestra: el tamaño de cada conflicto ni si la empresa es la única parte. Es una muestra de 58 casos, no un censo.','Does not show: the size of each conflict or whether the company is the only party. A sample of 58 cases, not a census.'));
   let dots='';C.forEach((c,i)=>{const [x,y]=proj(c.lon,c.lat);const col=css(SEC[c.sector]?SEC[c.sector].c:'--fg-3');dots+=`<circle class="dot clk" tabindex="0" role="button" data-ci="${i}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9" fill="${col}" data-tip="${esc(T(c.name_es,c.name_en)+' · '+(c.companies||[]).join(', ')+' · '+T('tocá para ver fuentes','tap for sources'))}"/>`});
@@ -1057,6 +1071,8 @@ new MutationObserver(render).observe(document.documentElement,{attributes:true,a
 let saved='es';try{saved=localStorage.getItem('lang')||'es'}catch(e){}
 const h0=(location.hash||'').replace('#',''); const start=panels.findIndex(p=>p.id===h0); cur=start>=0?start:0; panels.forEach((p,k)=>p.classList.toggle('cur',k===cur));
 setLang(saved);
+try{history.scrollRestoration='manual'}catch(e){}
+if(h0){requestAnimationFrame(()=>window.scrollTo(0,0));window.addEventListener('load',()=>setTimeout(()=>window.scrollTo(0,0),30))}
 fetch('data.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(d=>{D=d;render()}).catch(e=>{console.error('data load failed',e);document.getElementById('map1').innerHTML=`<p class="small muted">${T('No se pudieron cargar los datos (data.json)','Could not load the data file (data.json)')}: ${esc(e&&e.message||e)}</p>`});
 </script>
 </body>
